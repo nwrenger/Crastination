@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Fonts/HachicroUndertaleFont/HachicroUndertaleBattleFontRegular-L3zlg.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Player/PlayerSprites.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://World/Title.gd" type="Script" id=3]
+[ext_resource path="res://World/Level/Level1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/MuteButton/Mute.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 21
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationFade/Fade:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationFade/Fade:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Title" type="CanvasLayer"]
+script = ExtResource( 3 )
+NextScene = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.0
+margin_top = -15.0
+margin_right = 54.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 2 )
+toggle_mode = true
+text = "PLAY"
+
+[node name="Mute" parent="." instance=ExtResource( 5 )]
+
+[node name="Cat" type="AnimatedSprite" parent="."]
+position = Vector2( 577, 10 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 2 )
+animation = "idle"
+frame = 23
+playing = true
+
+[node name="Text" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -173.5
+margin_top = 74.0
+margin_right = 173.5
+margin_bottom = 116.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Darkplate"
+
+[node name="AnimationFade" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 3 )
+anims/FadeOut = SubResource( 4 )
+
+[node name="Fade" type="ColorRect" parent="AnimationFade"]
+self_modulate = Color( 0, 0, 0, 0.833333 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -666.0
+margin_top = -377.5
+margin_right = 666.0
+margin_bottom = 377.5
+mouse_filter = 2
+
+[connection signal="pressed" from="Button" to="." method="toggle"]
