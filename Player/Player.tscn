@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/PlayerSprites.tres" type="SpriteFrames" id=2]
@@ -30,6 +30,15 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 0.588235 ), Color( 0, 0, 0, 0 ) ]
 }
+
+[sub_resource type="Environment" id=48]
+background_mode = 1
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 1.2
+glow_bloom = 0.36
+glow_blend_mode = 0
+glow_high_quality = true
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 5
@@ -103,5 +112,8 @@ margin_left = -605.0
 margin_top = -324.0
 margin_right = -674.0
 margin_bottom = -393.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 48 )
 
 [connection signal="animation_finished" from="Sprite" to="." method="animation_finished"]
