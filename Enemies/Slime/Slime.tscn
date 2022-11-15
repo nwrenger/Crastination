@@ -104,12 +104,12 @@ moving_platform_apply_velocity_on_leave = 1
 
 [node name="Collision" type="CollisionShape2D" parent="Slime"]
 shape = SubResource( 2 )
+disabled = true
 
 [node name="Sprite" type="AnimatedSprite" parent="Slime"]
 position = Vector2( 0, -2 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
 playing = true
 
 [node name="dead" type="Area2D" parent="Slime"]
