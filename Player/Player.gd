@@ -89,7 +89,7 @@ func _physics_process(delta):
 		else:
 			var wall_fall_speed_final
 			if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
-				wall_fall_speed_final =  wall_fall_speed / 2
+				wall_fall_speed_final =  wall_fall_speed/2
 			else:
 				wall_fall_speed_final = wall_fall_speed
 			velocity.y = wall_fall_speed_final

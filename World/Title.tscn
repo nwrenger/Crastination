@@ -70,7 +70,7 @@ position = Vector2( 577, 10 )
 scale = Vector2( 4, 4 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 23
+frame = 10
 playing = true
 
 [node name="Text" type="RichTextLabel" parent="."]
