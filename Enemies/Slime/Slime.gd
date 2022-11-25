@@ -19,6 +19,7 @@ func _process(_delta):
 func head_entered(_body):
 	if already_dead == false:
 		emit_signal("player_killed_slime")
+		$Slime/Sprite/Light2D.hide()
 		already_dead = true
 		$MoveAnimation.stop()
 		$Slime/Sprite.play("death")
