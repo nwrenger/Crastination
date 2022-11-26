@@ -177,7 +177,7 @@ anims/FadeIn = SubResource( 3 )
 anims/FadeOut = SubResource( 4 )
 
 [node name="Fade" type="ColorRect" parent="Canvas/AnimationFade"]
-self_modulate = Color( 0, 0, 0, 0.833333 )
+self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
