@@ -43,6 +43,7 @@ custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 1 )
 toggle_mode = true
+pressed = true
 script = ExtResource( 2 )
 
 [connection signal="toggled" from="." to="." method="toggle"]
