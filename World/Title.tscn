@@ -84,7 +84,7 @@ position = Vector2( 577, 10 )
 scale = Vector2( 4, 4 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 20
+frame = 14
 playing = true
 
 [node name="Light" type="Light2D" parent="Cat"]
@@ -139,8 +139,8 @@ occluder = SubResource( 12 )
 visible = false
 position = Vector2( 661, 355 )
 texture = ExtResource( 6 )
-texture_scale = 13.55
-energy = 2.67
+texture_scale = 10.0
+energy = 2.0
 shadow_enabled = true
 
 [node name="Canvas" type="CanvasLayer" parent="."]
