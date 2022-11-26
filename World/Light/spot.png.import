@@ -14,16 +14,16 @@ dest_files=[ "res://.import/spot.png-2afdcfbabb94260aa3235ed3931030ab.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=false
-flags/anisotropic=false
-flags/srgb=2
+flags/mipmaps=true
+flags/anisotropic=true
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

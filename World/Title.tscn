@@ -53,7 +53,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.1, 0.5 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
@@ -61,7 +61,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "FadeOut"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimationFade/Fade:self_modulate")
 tracks/0/interp = 1
@@ -69,7 +68,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
@@ -85,7 +84,7 @@ position = Vector2( 577, 10 )
 scale = Vector2( 4, 4 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 4
+frame = 20
 playing = true
 
 [node name="Light" type="Light2D" parent="Cat"]
@@ -135,6 +134,14 @@ occluder = SubResource( 13 )
 [node name="e" type="LightOccluder2D" parent="Shadow"]
 position = Vector2( 466.5, 74 )
 occluder = SubResource( 12 )
+
+[node name="Button Light" type="Light2D" parent="."]
+visible = false
+position = Vector2( 661, 355 )
+texture = ExtResource( 6 )
+texture_scale = 13.55
+energy = 2.67
+shadow_enabled = true
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 script = ExtResource( 3 )

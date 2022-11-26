@@ -33,7 +33,7 @@ extents = Vector2( 7, 6 )
 extents = Vector2( 0.635331, 4.5 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 8, 0.975 )
+extents = Vector2( 8, 0.4875 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "0"
@@ -108,6 +108,7 @@ light_mask = 2
 position = Vector2( 0, -2 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Slime/Sprite"]
@@ -136,7 +137,7 @@ shape = SubResource( 4 )
 
 [node name="Collision2" type="CollisionShape2D" parent="Slime/dead"]
 self_modulate = Color( 0.219608, 0, 1, 1 )
-position = Vector2( 8, 1.5 )
+position = Vector2( 8, 1 )
 shape = SubResource( 4 )
 
 [node name="head" type="Area2D" parent="Slime"]
@@ -145,7 +146,7 @@ collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="Slime/head"]
 self_modulate = Color( 0.756863, 1, 0, 1 )
-position = Vector2( 0, -7 )
+position = Vector2( 0, -6.5125 )
 shape = SubResource( 6 )
 
 [node name="MoveAnimation" type="AnimationPlayer" parent="."]

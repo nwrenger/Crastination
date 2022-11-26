@@ -8,6 +8,7 @@ func _ready():
 
 func toggle():
 	$AnimationFade.play("FadeOut")
+	$"../Button Light".show()
 
 	yield($AnimationFade, "animation_finished")
 	# warning-ignore:return_value_discarded
