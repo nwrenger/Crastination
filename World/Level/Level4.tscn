@@ -5,7 +5,7 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Slime/Slime.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Level/End.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Level/Level5.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=7]
 
 [node name="Level4" type="TileMap"]
