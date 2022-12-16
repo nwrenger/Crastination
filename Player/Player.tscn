@@ -39,9 +39,7 @@ background_color = Color( 1, 1, 1, 1 )
 auto_exposure_max_luma = 16.0
 auto_exposure_speed = 0.01
 ss_reflections_enabled = true
-ssao_enabled = true
 ssao_quality = 2
-dof_blur_far_enabled = true
 glow_enabled = true
 glow_intensity = 0.19
 glow_strength = 0.83
@@ -63,8 +61,7 @@ texture = ExtResource( 6 )
 light_mask = 2
 position = Vector2( 0, -11 )
 frames = ExtResource( 2 )
-animation = "idle"
-frame = 2
+animation = "readyfalling"
 playing = true
 
 [node name="Light" type="Light2D" parent="Sprite"]
@@ -73,9 +70,15 @@ position = Vector2( 0, 10 )
 texture = ExtResource( 5 )
 shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 1 )
-shadow_filter = 5
-shadow_filter_smooth = 1.0
+shadow_buffer_size = 4096
 shadow_item_cull_mask = 3
+
+[node name="Light2" type="Light2D" parent="Sprite"]
+position = Vector2( 0, 10 )
+texture = ExtResource( 5 )
+texture_scale = 0.6
+energy = 0.75
+shadow_gradient_length = 2.0
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 modulate = Color( 0.756863, 0, 1, 1 )

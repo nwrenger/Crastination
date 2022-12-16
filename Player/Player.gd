@@ -132,4 +132,4 @@ func player_killed_slime():
 func player_jump():
 	$Sprite.play("jump")
 	on_ground = false
-	velocity.y = jump_height * 2.3
+	velocity.y = jump_height * 2.35
