@@ -108,19 +108,17 @@ light_mask = 2
 position = Vector2( 0, -2 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Slime/Sprite"]
-light_mask = 3
-position = Vector2( 0, 2 )
 texture = ExtResource( 12 )
 color = Color( 1, 0, 0, 1 )
+energy = 1.4
 shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 1 )
 shadow_filter = 5
 shadow_filter_smooth = 1.0
-shadow_item_cull_mask = 3
 
 [node name="Collision" type="CollisionShape2D" parent="Slime"]
 shape = SubResource( 2 )
