@@ -10,6 +10,7 @@ export (float, 0, 1.0) var acceleration = 0.13
 
 var velocity = Vector2.ZERO
 var jump_timer := 0.0
+var notwall := false
 
 var wall_right := false
 var wall_left := false
@@ -21,7 +22,8 @@ func _ready():
 func get_input():
 	var dir = 0
 	if Input.is_action_pressed("ui_right"):
-		dir += 1
+		if notwall:
+			dir += 1
 		$Sprite.flip_h = false
 		wall_left = false
 		if on_ground and not wall_right and not wall_left:
@@ -29,7 +31,8 @@ func get_input():
 				if $Sprite.animation != "jumplanding":
 					$Sprite.play("run")
 	if Input.is_action_pressed("ui_left"):
-		dir -= 1
+		if notwall:
+			dir -= 1
 		$Sprite.flip_h = true
 		wall_right = false
 		if on_ground and not wall_right and not wall_left:
@@ -54,19 +57,32 @@ func _physics_process(delta):
 #    print($Sprite.animation)
 
 	if $WallLeft.get_overlapping_bodies():
+		if Input.is_action_pressed("ui_right"):
+			$ArrowRight.show()
+		else:
+			$ArrowRight.hide()
 		wall_left = true
 		$Sprite.flip_h = true
 	else:
 		wall_left = false
+		$ArrowRight.hide()
 	if $WallRight.get_overlapping_bodies():
+		if Input.is_action_pressed("ui_left"):
+			$ArrowLeft.show()
+		else:
+			$ArrowLeft.hide()
 		wall_right = true
 		$Sprite.flip_h = false
 	else:
+		$ArrowLeft.hide()
 		wall_right = false
 
+	if wall_left or wall_right:
+		notwall = false
+	else:
+		notwall = true
 
-
-#    print(wall_left, wall_right)
+#	print(notwall, wall_right, wall_left)
 	$WallLeft/SlideParticles.emitting = wall_left
 	$WallRight/SlideParticles.emitting = wall_right
 	if wall_left == false and wall_right == false:
@@ -75,27 +91,29 @@ func _physics_process(delta):
 	else:
 		on_ground = false
 		if Input.is_action_just_pressed("ui_up") and wall_left:
-			if Input.is_action_pressed("ui_left"):
-				velocity.x += player_speed
+			if Input.is_action_pressed("ui_right"):
+				velocity.x += player_speed * 1.7
 			else:
 				velocity.x += player_speed/1.4
 			velocity.y += jump_height
 		elif Input.is_action_just_pressed("ui_up") and wall_right:
 			if Input.is_action_pressed("ui_left"):
-				velocity.x -= player_speed
+				velocity.x -= player_speed * 1.7
 			else:
 				velocity.x -= player_speed/1.4
 			velocity.y += jump_height
 		else:
 			var wall_fall_speed_final
 			if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
-				wall_fall_speed_final =  wall_fall_speed/2
+				wall_fall_speed_final =  wall_fall_speed/2.5
 			else:
 				wall_fall_speed_final = wall_fall_speed
 			velocity.y = wall_fall_speed_final
 			$Sprite.play("wall")
 
-#    print(velocity)
+
+
+#	print(velocity)
 	velocity = move_and_slide(velocity, Vector2.UP)
 #    print(on_ground)        if not $Sprite.animation == "idle":
 #sets on_ground once true when on ground
@@ -118,6 +136,7 @@ func _physics_process(delta):
 		velocity.y = jump_height
 		on_ground = false
 		$Sprite.play("jump")
+
 
 func animation_finished():
 	if $Sprite.animation != "jump":
