@@ -14,6 +14,7 @@ var notwall := false
 
 var wall_right := false
 var wall_left := false
+var notlooking := false
 var wall_fall_speed := 120
 
 func _ready():
@@ -58,23 +59,23 @@ func _physics_process(delta):
 
 	if $WallLeft.get_overlapping_bodies():
 		if Input.is_action_pressed("ui_right"):
-			$ArrowRight.show()
+			$Sprite.play("walllook")
+			notlooking = false
 		else:
-			$ArrowRight.hide()
+			notlooking = true
 		wall_left = true
 		$Sprite.flip_h = true
 	else:
 		wall_left = false
-		$ArrowRight.hide()
 	if $WallRight.get_overlapping_bodies():
 		if Input.is_action_pressed("ui_left"):
-			$ArrowLeft.show()
+			$Sprite.play("walllook")
+			notlooking = false
 		else:
-			$ArrowLeft.hide()
+			notlooking = true
 		wall_right = true
 		$Sprite.flip_h = false
 	else:
-		$ArrowLeft.hide()
 		wall_right = false
 
 	if wall_left or wall_right:
@@ -96,12 +97,14 @@ func _physics_process(delta):
 			else:
 				velocity.x += player_speed/1.4
 			velocity.y += jump_height
+			$Sprite.play("wallair")
 		elif Input.is_action_just_pressed("ui_up") and wall_right:
 			if Input.is_action_pressed("ui_left"):
 				velocity.x -= player_speed * 1.7
 			else:
 				velocity.x -= player_speed/1.4
 			velocity.y += jump_height
+			$Sprite.play("wallair")
 		else:
 			var wall_fall_speed_final
 			if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
@@ -109,7 +112,8 @@ func _physics_process(delta):
 			else:
 				wall_fall_speed_final = wall_fall_speed
 			velocity.y = wall_fall_speed_final
-			$Sprite.play("wall")
+			if notlooking:
+				$Sprite.play("wall")
 
 
 
