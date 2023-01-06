@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/PlayerSprites.tres" type="SpriteFrames" id=2]
@@ -6,8 +6,6 @@
 [ext_resource path="res://Player/SlideParticles.tres" type="Material" id=4]
 [ext_resource path="res://World/Light/spot.png" type="Texture" id=5]
 [ext_resource path="res://World/Terrain/background.png" type="Texture" id=6]
-[ext_resource path="res://Player/ArrowRight.png" type="Texture" id=7]
-[ext_resource path="res://Player/ArrowLeft.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=7]
 radius = 7.0
@@ -81,20 +79,6 @@ texture = ExtResource( 5 )
 texture_scale = 0.6
 energy = 0.75
 shadow_gradient_length = 2.0
-
-[node name="ArrowLeft" type="Sprite" parent="."]
-visible = false
-modulate = Color( 0, 0, 0, 1 )
-light_mask = 0
-position = Vector2( -9, -9 )
-texture = ExtResource( 8 )
-
-[node name="ArrowRight" type="Sprite" parent="."]
-visible = false
-modulate = Color( 0, 0, 0, 1 )
-light_mask = 0
-position = Vector2( 9, -9 )
-texture = ExtResource( 7 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 modulate = Color( 0.756863, 0, 1, 1 )
