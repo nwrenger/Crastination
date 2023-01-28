@@ -1,12 +1,13 @@
 extends AnimatedSprite
 
-var animation_finished = false
+var left_run
+var right_run
 
 func nplay(anim):
 	if anim != animation:
 		play(anim)
 
-func _on_Player_move(velocity, on_ground, wall_right, wall_left):
+func _on_Player_move(velocity, wall_right, wall_left, on_ground):
 	if wall_right:
 		if Input.is_action_pressed("ui_left"):
 			nplay("walllook")
@@ -18,24 +19,25 @@ func _on_Player_move(velocity, on_ground, wall_right, wall_left):
 			nplay("walllook")
 		else:
 			nplay("wall")
-	if velocity.x >= 100:
-		if on_ground:
-			nplay("run")
-		flip_h = false
-	if velocity.x <= -100:
+		flip_h = true
+	if Input.is_action_pressed("ui_left") and wall_right == false:
 		if on_ground:
 			nplay("run")
 		flip_h = true
-	if velocity.y < 0:
+	if Input.is_action_pressed("ui_right") and wall_left == false:
+		if on_ground:
+			nplay("run")
+		flip_h = false
+	if Input.is_action_pressed("ui_up"):
 		nplay("jump")
-		animation_finished = false
-	if velocity.y > 50 and wall_left == false and wall_right == false:
+	if velocity.y > 100 and wall_left == false and wall_right == false:
 			nplay("readyfalling")
-	if velocity.x < 100 and velocity.x > -100 and velocity.y > -1 and velocity.y < 26 and on_ground:
+	if Input.is_action_pressed("ui_left") == false and Input.is_action_pressed("ui_right") == false and velocity.y > -1 and velocity.y < 26 and on_ground:
 		if animation == "readyfalling":
 			nplay("jumplanding")
 		if animation == "jumplanding" and frame == 2 or animation == "run":
 			nplay("idle")
 
-func _on_Sprite_animation_finished():
-	animation_finished = true
+
+func _on_Player_upitgoes():
+	nplay("jump")

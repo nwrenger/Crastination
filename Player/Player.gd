@@ -16,7 +16,9 @@ var wall_right := false
 var wall_left := false
 var wall_fall_speed := 120
 
+#for Animation Script, ignore connection error
 signal move
+signal upitgoes
 
 
 func _ready():
@@ -87,7 +89,7 @@ func _physics_process(delta):
 			velocity.y = wall_fall_speed_final
 
 	velocity = move_and_slide(velocity, Vector2.UP)
-	emit_signal("move", velocity, on_ground, wall_right, wall_left)
+	emit_signal("move", velocity, wall_right, wall_left, on_ground)
 	if is_on_floor() and not on_ground:
 		on_ground = true
 
@@ -109,7 +111,9 @@ func _physics_process(delta):
 func player_killed_slime():
 	velocity.y = jump_height * 1.4
 	on_ground = false
+	emit_signal("upitgoes")
 
 func player_jump():
 	velocity.y = jump_height * 2.35
 	on_ground = false
+	emit_signal("upitgoes")
