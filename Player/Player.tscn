@@ -13,10 +13,10 @@ radius = 7.0
 height = 0.0
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 0.6, 2.25 )
+extents = Vector2( 0.6, 2.75 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 0.6, 2.25 )
+extents = Vector2( 0.6, 2.75 )
 
 [sub_resource type="Animation" id=47]
 resource_name = "FadeIn"
@@ -99,7 +99,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Collision" type="CollisionShape2D" parent="WallRight"]
-position = Vector2( 7.5, -4.25 )
+position = Vector2( 7.5, -3.75 )
 shape = SubResource( 9 )
 
 [node name="SlideParticles" type="Particles2D" parent="WallRight"]
@@ -115,7 +115,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Collision" type="CollisionShape2D" parent="WallLeft"]
-position = Vector2( -7.5, -4.25 )
+position = Vector2( -7.5, -3.75 )
 shape = SubResource( 8 )
 
 [node name="SlideParticles" type="Particles2D" parent="WallLeft"]
@@ -147,4 +147,4 @@ margin_bottom = -394.0
 environment = SubResource( 48 )
 
 [connection signal="move" from="." to="Sprite" method="_on_Player_move"]
-[connection signal="animation_finished" from="Sprite" to="Sprite" method="_on_Sprite_animation_finished"]
+[connection signal="upitgoes" from="." to="Sprite" method="_on_Player_upitgoes"]
