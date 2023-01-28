@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/PlayerSprites.tres" type="SpriteFrames" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Player/SlideParticles.tres" type="Material" id=4]
 [ext_resource path="res://World/Light/spot.png" type="Texture" id=5]
 [ext_resource path="res://World/Terrain/background.png" type="Texture" id=6]
+[ext_resource path="res://Player/Animation.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape2D" id=7]
 radius = 7.0
@@ -63,6 +64,7 @@ position = Vector2( 0, -11 )
 frames = ExtResource( 2 )
 animation = "readyfalling"
 playing = true
+script = ExtResource( 7 )
 
 [node name="Light" type="Light2D" parent="Sprite"]
 light_mask = 3
@@ -144,4 +146,5 @@ margin_bottom = -394.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 48 )
 
-[connection signal="animation_finished" from="Sprite" to="." method="animation_finished"]
+[connection signal="move" from="." to="Sprite" method="_on_Player_move"]
+[connection signal="animation_finished" from="Sprite" to="Sprite" method="_on_Sprite_animation_finished"]
