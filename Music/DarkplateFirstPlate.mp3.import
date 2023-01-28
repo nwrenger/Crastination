@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DarkplateFirstPlate.mp3-7cc44ef2e12dd738669dff4675af5796.mp3str"
+
+[deps]
+
+source_file="res://Music/DarkplateFirstPlate.mp3"
+dest_files=[ "res://.import/DarkplateFirstPlate.mp3-7cc44ef2e12dd738669dff4675af5796.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

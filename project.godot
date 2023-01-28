@@ -19,7 +19,7 @@ config/windows_native_icon="res://icon.png"
 
 [autoload]
 
-MusicInLevels="*res://Music/Music.tscn"
+Music="*res://Music/Music.tscn"
 
 [display]
 

@@ -1,7 +1,6 @@
 extends Button
 
 func _ready():
-	AudioServer.set_bus_mute(0, true)
 	if AudioServer.is_bus_mute(0):
 		pressed = true
 
