@@ -30,7 +30,7 @@ func _on_Player_move(velocity, wall_right, wall_left, on_ground):
 		flip_h = false
 	if Input.is_action_just_pressed("ui_up"):
 		nplay("jump")
-	if velocity.y > 100 and wall_left == false and wall_right == false:
+	if velocity.y > 250 and wall_left == false and wall_right == false:
 			nplay("readyfalling")
 	if Input.is_action_pressed("ui_left") == false and Input.is_action_pressed("ui_right") == false and velocity.y > -1 and velocity.y < 26 and on_ground:
 		if animation == "readyfalling":
