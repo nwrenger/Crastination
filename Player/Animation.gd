@@ -28,7 +28,7 @@ func _on_Player_move(velocity, wall_right, wall_left, on_ground):
 		if on_ground:
 			nplay("run")
 		flip_h = false
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up"):
 		nplay("jump")
 	if velocity.y > 100 and wall_left == false and wall_right == false:
 			nplay("readyfalling")
@@ -36,6 +36,7 @@ func _on_Player_move(velocity, wall_right, wall_left, on_ground):
 		if animation == "readyfalling":
 			nplay("jumplanding")
 		if animation == "jumplanding" and frame == 2 or animation == "run":
+			print(animation)
 			nplay("idle")
 
 
