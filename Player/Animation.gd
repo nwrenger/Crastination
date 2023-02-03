@@ -36,7 +36,6 @@ func _on_Player_move(velocity, wall_right, wall_left, on_ground):
 		if animation == "readyfalling":
 			nplay("jumplanding")
 		if animation == "jumplanding" and frame == 2 or animation == "run":
-			print(animation)
 			nplay("idle")
 
 
