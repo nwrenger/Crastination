@@ -8,7 +8,7 @@
 [ext_resource path="res://World/Terrain/Borders.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Fonts/HachicroUndertaleFont/HachicroUndertaleBattleFontRegular-L3zlg.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=8]
-[ext_resource path="res://World/Level/End.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World/Level/Level7.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 7
@@ -81,7 +81,9 @@ margin_top = 53.3333
 margin_right = 473.333
 margin_bottom = 198.333
 custom_fonts/normal_font = SubResource( 3 )
-text = "So, do know it's difficult? Will it accept this Story? 
+text = "
+
+
 Here is nothing...only Darkness...
 
 
@@ -90,15 +92,16 @@ Here is nothing...only Darkness...
 
 
 
-Did it Lo0p 01100001 01100111 01100001 01101001 01101110?"
+You HAVE to get out of here...
+"
 
 [node name="Forget\?" type="RichTextLabel" parent="."]
 margin_left = 733.0
 margin_top = -405.0
-margin_right = 871.0
-margin_bottom = -376.0
+margin_right = 884.0
+margin_bottom = -368.0
 custom_fonts/normal_font = SubResource( 4 )
-text = "Forgot something? Without your help it wont simply end?"
+text = "Forgot something? You have to change it, it wont simpy end...by doing nothing"
 
 [connection signal="player_jump" from="JumpPlattform" to="Player" method="player_jump"]
 [connection signal="player_jump" from="JumpPlattform2" to="Player" method="player_jump"]
