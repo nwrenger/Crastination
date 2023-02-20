@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Fonts/HachicroUndertaleFont/HachicroUndertaleBattleFontRegular-L3zlg.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Player/PlayerSprites.tres" type="SpriteFrames" id=2]
@@ -9,31 +9,28 @@
 [ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=7]
 
 [sub_resource type="OccluderPolygon2D" id=5]
-polygon = PoolVector2Array( 0, 0, 0.5, 35, 30.5, 35, 30.5, 35, 30.5, 30, 35.5, 30, 35.5, 5, 30.5, 5, 30.5, 0 )
+polygon = PoolVector2Array( 418, 73, 418, 78, 413, 78, 413, 103, 418, 103, 418, 108, 443, 108, 443, 103, 448, 103, 448, 78, 443, 78, 443, 73 )
 
 [sub_resource type="OccluderPolygon2D" id=6]
-polygon = PoolVector2Array( 40.5, 0, 40.5, 30, 45.5, 30, 45.5, 35, 75.5, 35, 75.5, 5, 70.5, 5, 70.5, 0 )
+polygon = PoolVector2Array( 453, 73, 453, 108, 468, 108, 468, 93, 488, 93, 488, 78, 483, 78, 483, 73 )
 
 [sub_resource type="OccluderPolygon2D" id=7]
-polygon = PoolVector2Array( 80.5, 0, 80.5, 35, 95.5, 35, 95.5, 20, 115.5, 20, 115.5, 5, 110.5, 5, 110.5, 0 )
+polygon = PoolVector2Array( 493, 73, 493, 103, 498, 103, 498, 108, 528, 108, 528, 78, 523, 78, 523, 73 )
 
 [sub_resource type="OccluderPolygon2D" id=8]
-polygon = PoolVector2Array( 120.5, 0, 120.5, 35, 135.5, 35, 135.5, 30, 140.5, 30, 140.5, 35, 155.5, 35, 155.5, 5, 140.5, 5, 140.5, 15, 135.5, 15, 135.5, 0 )
+polygon = PoolVector2Array( 538, 73, 538, 78, 533, 78, 533, 93, 538, 93, 538, 108, 563, 108, 563, 103, 568, 103, 568, 88, 563, 88, 563, 73 )
 
 [sub_resource type="OccluderPolygon2D" id=9]
-polygon = PoolVector2Array( 160.5, 0, 160.5, 35, 175.5, 35, 175.5, 25, 190.5, 25, 190.5, 20, 195.5, 20, 195.5, 5, 190.5, 5, 190.5, 0 )
+polygon = PoolVector2Array( 578, 72, 578, 77, 573, 77, 573, 92, 578, 92, 578, 102, 583, 102, 583, 107, 603, 107, 603, 102, 608, 102, 608, 82, 603, 82, 603, 77, 593, 77, 593, 72 )
 
 [sub_resource type="OccluderPolygon2D" id=10]
-polygon = PoolVector2Array( 200.5, 0, 200.5, 30, 205.5, 30, 205.5, 35, 220.5, 35, 220.5, 20, 215.5, 20, 215.5, 0 )
+polygon = PoolVector2Array( 613, 72, 628, 72, 628, 107, 613, 107 )
 
 [sub_resource type="OccluderPolygon2D" id=11]
-polygon = PoolVector2Array( 225.5, 0, 225.5, 30, 230.5, 30, 230.5, 35, 260.5, 35, 260.5, 5, 255.5, 5, 255.5, 0 )
-
-[sub_resource type="OccluderPolygon2D" id=13]
-polygon = PoolVector2Array( 310.5, 0, 310.5, 5, 305.5, 5, 305.5, 30, 310.5, 30, 310.5, 35, 340.5, 35, 340.5, 5, 335.5, 5, 335.5, 0 )
+polygon = PoolVector2Array( 633, 72, 633, 107, 648, 107, 648, 87, 653, 87, 653, 107, 668, 107, 668, 77, 663, 77, 663, 72 )
 
 [sub_resource type="OccluderPolygon2D" id=12]
-polygon = PoolVector2Array( 265.5, 5, 265.5, 20, 270.5, 20, 270.5, 30, 275.5, 30, 275.5, 35, 295.5, 35, 295.5, 30, 300.5, 30, 300.5, 10, 295.5, 10, 295.5, 5, 285.5, 5, 285.5, 0, 270.5, 0, 270.5, 5 )
+polygon = PoolVector2Array( 778, 72, 778, 77, 773, 77, 773, 102, 778, 102, 778, 107, 803, 107, 803, 102, 808, 102, 808, 77, 803, 77, 803, 72 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 21
@@ -77,14 +74,15 @@ tracks/0/keys = {
 [node name="Title" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 1 )
 
 [node name="Cat" type="AnimatedSprite" parent="."]
 light_mask = 2
-position = Vector2( 577, 10 )
+position = Vector2( 562, 10 )
 scale = Vector2( 4, 4 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Light" type="Light2D" parent="Cat"]
@@ -98,42 +96,51 @@ shadow_filter_smooth = 1.0
 shadow_item_cull_mask = 3
 
 [node name="Shadow" type="Node2D" parent="."]
+position = Vector2( 0, 2 )
 
-[node name="D" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 467, 74 )
+[node name="c" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 0, -1 )
 occluder = SubResource( 5 )
 
-[node name="a" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 466.5, 74 )
+[node name="r" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 0, -1 )
 occluder = SubResource( 6 )
 
-[node name="r" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 466.5, 74 )
+[node name="a" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 0, -1 )
 occluder = SubResource( 7 )
 
-[node name="k" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 466.5, 74 )
+[node name="s" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 0, -1 )
 occluder = SubResource( 8 )
 
-[node name="p" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 466.5, 74 )
+[node name="t" type="LightOccluder2D" parent="Shadow"]
 occluder = SubResource( 9 )
 
-[node name="l" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 466.5, 74 )
+[node name="i" type="LightOccluder2D" parent="Shadow"]
 occluder = SubResource( 10 )
 
-[node name="a2" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 466.5, 74 )
+[node name="n" type="LightOccluder2D" parent="Shadow"]
 occluder = SubResource( 11 )
 
-[node name="t" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 466.5, 74 )
-occluder = SubResource( 13 )
+[node name="a2" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 180, -1 )
+occluder = SubResource( 7 )
 
-[node name="e" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 466.5, 74 )
+[node name="t2" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 140, 0 )
+occluder = SubResource( 9 )
+
+[node name="i2" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 140, 0 )
+occluder = SubResource( 10 )
+
+[node name="o" type="LightOccluder2D" parent="Shadow"]
 occluder = SubResource( 12 )
+
+[node name="n2" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 180, 0 )
+occluder = SubResource( 11 )
 
 [node name="Button Light" type="Light2D" parent="."]
 visible = false
@@ -165,12 +172,12 @@ text = "PLAY"
 [node name="Text" type="RichTextLabel" parent="Canvas"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -173.5
+margin_left = -227.0
 margin_top = 74.0
-margin_right = 173.5
+margin_right = 227.0
 margin_bottom = 116.0
 custom_fonts/normal_font = SubResource( 1 )
-text = "Darkplate"
+text = "crastination"
 
 [node name="Mute" parent="Canvas" instance=ExtResource( 5 )]
 
