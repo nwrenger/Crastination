@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Fonts/HachicroUndertaleFont/HachicroUndertaleBattleFontRegular-L3zlg.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Player/PlayerSprites.tres" type="SpriteFrames" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://UI/MuteButton/Mute.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/Light/spot.png" type="Texture" id=6]
 [ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/Itch.ioButton/ItchioButton.tscn" type="PackedScene" id=8]
 
 [sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 418, 73, 418, 78, 413, 78, 413, 103, 418, 103, 418, 108, 443, 108, 443, 103, 448, 103, 448, 78, 443, 78, 443, 73 )
@@ -160,6 +161,16 @@ shadow_filter_smooth = 1.0
 script = ExtResource( 3 )
 NextScene = ExtResource( 4 )
 
+[node name="ItchioButton" parent="Canvas" instance=ExtResource( 8 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -59.0001
+margin_top = -53.0001
+margin_right = 2353.0
+margin_bottom = 2079.0
+
 [node name="Button" type="Button" parent="Canvas"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -190,6 +201,7 @@ anims/FadeIn = SubResource( 3 )
 anims/FadeOut = SubResource( 4 )
 
 [node name="Fade" type="ColorRect" parent="Canvas/AnimationFade"]
+visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
