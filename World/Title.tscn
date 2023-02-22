@@ -83,7 +83,7 @@ position = Vector2( 568, 10 )
 scale = Vector2( 4, 4 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 21
+frame = 1
 playing = true
 
 [node name="Light" type="Light2D" parent="Cat"]
