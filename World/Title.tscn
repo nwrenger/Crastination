@@ -78,11 +78,11 @@ position = Vector2( 0, 1 )
 
 [node name="Cat" type="AnimatedSprite" parent="."]
 light_mask = 2
-position = Vector2( 562, 10 )
+position = Vector2( 568, 10 )
 scale = Vector2( 4, 4 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 2
+frame = 11
 playing = true
 
 [node name="Light" type="Light2D" parent="Cat"]
@@ -99,47 +99,51 @@ shadow_item_cull_mask = 3
 position = Vector2( 0, 2 )
 
 [node name="c" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 0, -1 )
+position = Vector2( 7, -1 )
 occluder = SubResource( 5 )
 
 [node name="r" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 0, -1 )
+position = Vector2( 7, -1 )
 occluder = SubResource( 6 )
 
 [node name="a" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 0, -1 )
+position = Vector2( 7, -1 )
 occluder = SubResource( 7 )
 
 [node name="s" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 0, -1 )
+position = Vector2( 7, -1 )
 occluder = SubResource( 8 )
 
 [node name="t" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 7, 0 )
 occluder = SubResource( 9 )
 
 [node name="i" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 7, 0 )
 occluder = SubResource( 10 )
 
 [node name="n" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 7, 0 )
 occluder = SubResource( 11 )
 
 [node name="a2" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 180, -1 )
+position = Vector2( 187, -1 )
 occluder = SubResource( 7 )
 
 [node name="t2" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 140, 0 )
+position = Vector2( 147, 0 )
 occluder = SubResource( 9 )
 
 [node name="i2" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 140, 0 )
+position = Vector2( 147, 0 )
 occluder = SubResource( 10 )
 
 [node name="o" type="LightOccluder2D" parent="Shadow"]
+position = Vector2( 7, 0 )
 occluder = SubResource( 12 )
 
 [node name="n2" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 180, 0 )
+position = Vector2( 187, 0 )
 occluder = SubResource( 11 )
 
 [node name="Button Light" type="Light2D" parent="."]
@@ -172,9 +176,9 @@ text = "PLAY"
 [node name="Text" type="RichTextLabel" parent="Canvas"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -227.0
+margin_left = -220.5
 margin_top = 74.0
-margin_right = 227.0
+margin_right = 220.5
 margin_bottom = 116.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "crastination"
@@ -186,6 +190,7 @@ anims/FadeIn = SubResource( 3 )
 anims/FadeOut = SubResource( 4 )
 
 [node name="Fade" type="ColorRect" parent="Canvas/AnimationFade"]
+visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
