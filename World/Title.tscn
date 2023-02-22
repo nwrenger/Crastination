@@ -83,7 +83,7 @@ position = Vector2( 568, 10 )
 scale = Vector2( 4, 4 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 1
+frame = 21
 playing = true
 
 [node name="Light" type="Light2D" parent="Cat"]
@@ -201,7 +201,6 @@ anims/FadeIn = SubResource( 3 )
 anims/FadeOut = SubResource( 4 )
 
 [node name="Fade" type="ColorRect" parent="Canvas/AnimationFade"]
-visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
