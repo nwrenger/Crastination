@@ -76,24 +76,12 @@ custom_fonts/normal_font = SubResource( 2 )
 text = "?????"
 
 [node name="Story1" type="RichTextLabel" parent="."]
-margin_left = 297.333
-margin_top = 53.3333
-margin_right = 473.333
-margin_bottom = 198.333
+margin_left = 297.0
+margin_top = 72.0
+margin_right = 455.0
+margin_bottom = 91.0
 custom_fonts/normal_font = SubResource( 3 )
-text = "
-
-
-Here is nothing...only Darkness...
-
-
-
-
-
-
-
-You HAVE to get out of here...
-"
+text = "Here is nothing...only Darkness"
 
 [node name="Forget\?" type="RichTextLabel" parent="."]
 margin_left = 733.0
@@ -101,7 +89,7 @@ margin_top = -405.0
 margin_right = 884.0
 margin_bottom = -368.0
 custom_fonts/normal_font = SubResource( 4 )
-text = "Forgot something? You have to change it, it wont simpy end...by doing nothing"
+text = "Forgot something?"
 
 [connection signal="player_jump" from="JumpPlattform" to="Player" method="player_jump"]
 [connection signal="player_jump" from="JumpPlattform2" to="Player" method="player_jump"]

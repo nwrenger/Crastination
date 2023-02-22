@@ -59,10 +59,7 @@ text = "???????
 
 
 
-Story ?
-LOL NO One 
-Needs that
--dev"
+This is a secret :)"
 
 [connection signal="player_jump" from="JumpPlattform" to="Player" method="player_jump"]
 [connection signal="player_jump" from="JumpPlattform2" to="Player" method="player_jump"]
