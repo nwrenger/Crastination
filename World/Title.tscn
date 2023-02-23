@@ -8,6 +8,7 @@
 [ext_resource path="res://World/Light/spot.png" type="Texture" id=6]
 [ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/Itch.ioButton/ItchioButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Fonts/TitleText.tres" type="DynamicFont" id=9]
 
 [sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 418, 73, 418, 78, 413, 78, 413, 103, 418, 103, 418, 108, 443, 108, 443, 103, 448, 103, 448, 78, 443, 78, 443, 73 )
@@ -35,10 +36,6 @@ polygon = PoolVector2Array( 778, 72, 778, 77, 773, 77, 773, 102, 778, 102, 778, 
 
 [sub_resource type="DynamicFont" id=2]
 size = 21
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=1]
-size = 35
 font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=3]
@@ -83,7 +80,6 @@ position = Vector2( 568, 10 )
 scale = Vector2( 4, 4 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="Light" type="Light2D" parent="Cat"]
@@ -191,7 +187,7 @@ margin_left = -220.5
 margin_top = 74.0
 margin_right = 220.5
 margin_bottom = 116.0
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = ExtResource( 9 )
 text = "crastination"
 
 [node name="Mute" parent="Canvas" instance=ExtResource( 5 )]
