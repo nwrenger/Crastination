@@ -62,7 +62,8 @@ func _physics_process(delta):
 
 	$WallLeft/SlideParticles.emitting = wall_left
 	$WallRight/SlideParticles.emitting = wall_right
-
+	$WallLeft/SlideParticles2.emitting = wall_left
+	$WallRight/SlideParticles2.emitting = wall_right
 	if wall_left == false and wall_right == false:
 		if not velocity.y >= fall_speed_limit or is_on_floor():
 			velocity.y += gravity * delta

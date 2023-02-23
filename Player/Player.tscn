@@ -110,6 +110,14 @@ randomness = 1.0
 local_coords = false
 process_material = ExtResource( 4 )
 
+[node name="SlideParticles2" type="Particles2D" parent="WallRight"]
+position = Vector2( 7.5, -1 )
+emitting = false
+preprocess = 1.0
+randomness = 1.0
+local_coords = false
+process_material = ExtResource( 4 )
+
 [node name="WallLeft" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
@@ -120,6 +128,14 @@ shape = SubResource( 8 )
 
 [node name="SlideParticles" type="Particles2D" parent="WallLeft"]
 position = Vector2( -7.5, -5 )
+emitting = false
+preprocess = 1.0
+randomness = 1.0
+local_coords = false
+process_material = ExtResource( 4 )
+
+[node name="SlideParticles2" type="Particles2D" parent="WallLeft"]
+position = Vector2( -7.5, -1 )
 emitting = false
 preprocess = 1.0
 randomness = 1.0
