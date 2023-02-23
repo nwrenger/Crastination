@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://World/Terrain/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://MovingPlattform/MovingPlattform.gd" type="Script" id=2]
@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 100, 0 ), Vector2( -100, 0 ) ]
+"values": [ Vector2( 50, 0 ), Vector2( -50, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -34,17 +34,32 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -100, 0 ), Vector2( 100, 0 ) ]
+"values": [ Vector2( -50, 0 ), Vector2( 50, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "reset"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RigidBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [node name="MovingPlattform" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2( -45.3636, 0 )
+[node name="RigidBody2D" type="KinematicBody2D" parent="."]
+motion/sync_to_physics = true
 
 [node name="TileMap" type="TileMap" parent="RigidBody2D"]
-scale = Vector2( 3, 3 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 8, 8 )
 show_collision = true
@@ -54,5 +69,7 @@ tile_data = PoolIntArray( -8, 4, 0, -7, 3, 0, -6, 5, 0, -5, 3, 0, -4, 5, 0, -3, 
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 playback_process_mode = 0
+method_call_mode = 1
 anims/movingleft = SubResource( 1 )
 anims/movingright = SubResource( 2 )
+anims/reset = SubResource( 3 )
