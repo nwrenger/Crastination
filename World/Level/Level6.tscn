@@ -9,6 +9,7 @@
 [ext_resource path="res://Fonts/HachicroUndertaleFont/HachicroUndertaleBattleFontRegular-L3zlg.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Level/Level7.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Fonts/Text.tres" type="DynamicFont" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 7
@@ -19,10 +20,6 @@ size = 7
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 7
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=4]
 size = 7
 font_data = ExtResource( 7 )
 
@@ -88,7 +85,7 @@ margin_left = 733.0
 margin_top = -405.0
 margin_right = 884.0
 margin_bottom = -368.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = ExtResource( 10 )
 text = "Forgot something?"
 
 [connection signal="player_jump" from="JumpPlattform" to="Player" method="player_jump"]
