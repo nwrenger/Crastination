@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/CrastinationDark.mp3-f0ed435109f27251f8ced5df23a4aaa1.mp3str"
+
+[deps]
+
+source_file="res://Music/CrastinationDark.mp3"
+dest_files=[ "res://.import/CrastinationDark.mp3-f0ed435109f27251f8ced5df23a4aaa1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=2.0
