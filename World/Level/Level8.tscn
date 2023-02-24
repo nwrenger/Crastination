@@ -24,9 +24,6 @@ tile_data = PoolIntArray( -4652782, 4, 0, -4652781, 3, 0, -4652780, 5, 0, -46527
 [node name="Background" parent="." instance=ExtResource( 4 )]
 position = Vector2( 88.3333, 1 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -5.66667 )
-
 [node name="Borders" parent="." instance=ExtResource( 1 )]
 
 [node name="MovingPlattform" parent="." instance=ExtResource( 5 )]
@@ -97,6 +94,9 @@ margin_right = 2355.0
 margin_bottom = -570.333
 custom_fonts/normal_font = ExtResource( 8 )
 text = "Somthing is arriving"
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -5.66667 )
 
 [connection signal="player_jump" from="JumpPlattform" to="Player" method="player_jump"]
 [connection signal="player_jump" from="JumpPlattform2" to="Player" method="player_jump"]

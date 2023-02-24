@@ -27,8 +27,6 @@ tile_data = PoolIntArray( -2359247, 6, 0, -2359246, 3, 0, -2359245, 536870917, 0
 
 [node name="Borders" parent="." instance=ExtResource( 2 )]
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
-
 [node name="JumpPlattform" parent="." instance=ExtResource( 5 )]
 position = Vector2( 126.667, 9 )
 
@@ -60,6 +58,8 @@ text = "???????
 
 
 This is a secret :)"
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
 
 [connection signal="player_jump" from="JumpPlattform" to="Player" method="player_jump"]
 [connection signal="player_jump" from="JumpPlattform2" to="Player" method="player_jump"]

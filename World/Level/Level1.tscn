@@ -22,13 +22,13 @@ tile_data = PoolIntArray( 262163, 4, 0, 262164, 5, 0, 262165, -1610612732, 0, 26
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
 
-[node name="Player" parent="." instance=ExtResource( 8 )]
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="Borders" parent="." instance=ExtResource( 2 )]
 
 [node name="Portal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 440, 33 )
 NextScene = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+__meta__ = {
+"_edit_group_": true
+}

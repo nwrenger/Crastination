@@ -28,11 +28,11 @@ position = Vector2( 303.667, 73.6667 )
 [node name="Slime2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 292.333, -70 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-
 [node name="Portal" parent="." instance=ExtResource( 5 )]
 position = Vector2( -32, -151 )
 NextScene = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
 
 [connection signal="player_killed_slime" from="Slime" to="Player" method="player_killed_slime"]
 [connection signal="player_killed_slime" from="Slime2" to="Player" method="player_killed_slime"]

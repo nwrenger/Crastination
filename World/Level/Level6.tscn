@@ -36,8 +36,6 @@ tile_data = PoolIntArray( -3080122, 4, 0, -3080121, 3, 0, -3080120, 5, 0, -30801
 [node name="Background" parent="." instance=ExtResource( 2 )]
 position = Vector2( 143.667, -45.6667 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-
 [node name="Borders" parent="." instance=ExtResource( 6 )]
 
 [node name="JumpPlattform" parent="." instance=ExtResource( 5 )]
@@ -87,6 +85,8 @@ margin_right = 884.0
 margin_bottom = -368.0
 custom_fonts/normal_font = ExtResource( 10 )
 text = "Forgot something?"
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
 
 [connection signal="player_jump" from="JumpPlattform" to="Player" method="player_jump"]
 [connection signal="player_jump" from="JumpPlattform2" to="Player" method="player_jump"]

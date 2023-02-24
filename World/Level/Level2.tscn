@@ -21,8 +21,8 @@ tile_data = PoolIntArray( -1441759, 4, 0, -1441758, -1610612732, 0, -1376224, 4,
 
 [node name="Borders" parent="." instance=ExtResource( 4 )]
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-
 [node name="Portal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 607.667, 81 )
 NextScene = ExtResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
