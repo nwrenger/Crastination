@@ -24,8 +24,9 @@ func toggle():
 	yield($AnimationFade, "animation_finished")
 	# warning-ignore:return_value_discarded
 
-	if 0 == get_node("/root/Save").level:
+		#todo for loop
 		#for first time playing scene
+	if 0 == get_node("/root/Save").level:
 		get_tree().change_scene_to(Level1)
 	elif 1 == get_node("/root/Save").level:
 		get_tree().change_scene_to(Level1)
