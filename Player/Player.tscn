@@ -154,10 +154,10 @@ anims/FadeIn = SubResource( 47 )
 self_modulate = Color( 0, 0, 0, 0.588235 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -606.0
-margin_top = -325.0
-margin_right = -675.0
-margin_bottom = -394.0
+margin_left = -1282.0
+margin_top = -717.0
+margin_right = 5.0
+margin_bottom = -2.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 48 )
