@@ -29,6 +29,7 @@ position = Vector2( 440, 33 )
 NextScene = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( -9.66667, 63.6667 )
 __meta__ = {
 "_edit_group_": true
 }
