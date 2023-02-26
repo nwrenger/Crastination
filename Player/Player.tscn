@@ -13,10 +13,10 @@ radius = 7.0
 height = 0.0
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 0.6, 2.75 )
+extents = Vector2( 0.1, 0.875 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 0.6, 2.75 )
+extents = Vector2( 0.1, 0.75 )
 
 [sub_resource type="Animation" id=47]
 resource_name = "FadeIn"
@@ -99,7 +99,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Collision" type="CollisionShape2D" parent="WallRight"]
-position = Vector2( 7.5, -3.75 )
+position = Vector2( 7, -2.875 )
 shape = SubResource( 9 )
 
 [node name="SlideParticles" type="Particles2D" parent="WallRight"]
@@ -123,7 +123,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Collision" type="CollisionShape2D" parent="WallLeft"]
-position = Vector2( -7.5, -3.75 )
+position = Vector2( -7, -2.75 )
 shape = SubResource( 8 )
 
 [node name="SlideParticles" type="Particles2D" parent="WallLeft"]
@@ -151,6 +151,7 @@ pause_mode = 2
 anims/FadeIn = SubResource( 47 )
 
 [node name="Fade" type="ColorRect" parent="Animation"]
+visible = false
 self_modulate = Color( 0, 0, 0, 0.588235 )
 anchor_right = 1.0
 anchor_bottom = 1.0
