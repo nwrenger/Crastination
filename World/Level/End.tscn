@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Fonts/HachicroUndertaleFont/HachicroUndertaleBattleFontRegular-L3zlg.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/Level/End.gd" type="Script" id=3]
 [ext_resource path="res://World/Light/spot.png" type="Texture" id=4]
 [ext_resource path="res://UI/PauseMenu/PauseMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Fonts/ButtonText.tres" type="DynamicFont" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "main"
@@ -32,6 +33,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ "The END", "The END?" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/savedata:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="DynamicFont" id=2]
@@ -68,8 +81,21 @@ custom_fonts/normal_font = SubResource( 2 )
 bbcode_text = "The END"
 text = "The END"
 
+[node name="savedata" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -186.5
+margin_top = 16.0
+margin_right = 186.5
+margin_bottom = 56.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = "save data cleared"
+
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-self_modulate = Color( 0, 0, 0, 0.967742 )
+self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 0, 0, 0, 1 )
