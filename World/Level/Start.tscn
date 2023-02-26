@@ -47,7 +47,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("TileMap/DarkPlayer:modulate")
+tracks/1/path = NodePath("TileMap/DarkCat/Sprite:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -59,7 +59,7 @@ tracks/1/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("TileMap/DarkPlayer/Light:color")
+tracks/2/path = NodePath("TileMap/DarkCat/Light:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -68,10 +68,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 5, 7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0.45098, 0.45098, 0.45098, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("TileMap/DarkPlayer/Light2:color")
+tracks/3/path = NodePath("TileMap/DarkCat/Light2:color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -80,7 +80,31 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 5, 7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0.45098, 0.45098, 0.45098, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TileMap/Cat/Light:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TileMap/Cat/Light2:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="Start" type="Node2D"]
@@ -98,57 +122,56 @@ tile_data = PoolIntArray( 589829, 4, 0, 589830, 5, 0, 589831, 3, 0, 589832, 5, 0
 
 [node name="Background" parent="TileMap" instance=ExtResource( 2 )]
 
-[node name="DarkPlayer" type="AnimatedSprite" parent="TileMap"]
-modulate = Color( 0, 0, 0, 0 )
-light_mask = 3
-position = Vector2( 127.2, 56 )
-frames = SubResource( 5 )
-playing = true
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Cat" type="Node2D" parent="TileMap"]
 
-[node name="Light" type="Light2D" parent="TileMap/DarkPlayer"]
-light_mask = 3
-position = Vector2( 0, 10 )
-texture = ExtResource( 4 )
-color = Color( 0, 0, 0, 0 )
-mode = 2
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_buffer_size = 4096
-shadow_item_cull_mask = 3
-
-[node name="Light2" type="Light2D" parent="TileMap/DarkPlayer"]
-light_mask = 3
-position = Vector2( 1, 9 )
-texture = ExtResource( 4 )
-texture_scale = 0.6
-color = Color( 0, 0, 0, 0 )
-mode = 2
-shadow_gradient_length = 2.0
-
-[node name="Player" type="AnimatedSprite" parent="TileMap"]
+[node name="Sprite" type="AnimatedSprite" parent="TileMap/Cat"]
 light_mask = 2
 position = Vector2( 101.8, 56 )
 frames = SubResource( 5 )
+frame = 3
 playing = true
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="Light" type="Light2D" parent="TileMap/Player"]
-position = Vector2( 0, 10 )
+[node name="Light" type="Light2D" parent="TileMap/Cat"]
+position = Vector2( 101.8, 66 )
 texture = ExtResource( 4 )
-shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 1 )
 shadow_buffer_size = 4096
-shadow_item_cull_mask = 3
 
-[node name="Light2" type="Light2D" parent="TileMap/Player"]
-position = Vector2( 1, 9 )
+[node name="Light2" type="Light2D" parent="TileMap/Cat"]
+light_mask = 3
+position = Vector2( 102.8, 65 )
 texture = ExtResource( 4 )
 texture_scale = 0.6
 shadow_gradient_length = 2.0
+
+[node name="DarkCat" type="Node2D" parent="TileMap"]
+
+[node name="Sprite" type="AnimatedSprite" parent="TileMap/DarkCat"]
+modulate = Color( 0, 0, 0, 0 )
+light_mask = 2
+position = Vector2( 127.2, 56 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="Light" type="Light2D" parent="TileMap/DarkCat"]
+light_mask = 3
+position = Vector2( 127.2, 66 )
+texture = ExtResource( 4 )
+color = Color( 0, 0, 0, 0 )
+mode = 2
+shadow_buffer_size = 4096
+shadow_item_cull_mask = 3
+
+[node name="Light2" type="Light2D" parent="TileMap/DarkCat"]
+light_mask = 3
+position = Vector2( 128.2, 65 )
+texture = ExtResource( 4 )
+texture_scale = 0.6
+color = Color( 0, 0, 0, 0 )
+mode = 2
+shadow_gradient_length = 2.0
+shadow_item_cull_mask = 3
 
 [node name="AnimationFade" type="AnimationPlayer" parent="."]
 method_call_mode = 1
