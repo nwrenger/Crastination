@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Enemies/Slime/death/slime_death 6.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Slime/death/slime_death 2.png" type="Texture" id=2]
@@ -27,16 +27,16 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7, 6 )
+extents = Vector2( 6, 5.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 0.635331, 5.3125 )
+extents = Vector2( 7, 5.25 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 8, 0.4875 )
+extents = Vector2( 6, 0.5 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "0"
+[sub_resource type="Animation" id=7]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
@@ -44,13 +44,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("dead/Collision:position")
+tracks/1/path = NodePath("Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -59,22 +59,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -8, 1 ) ]
-}
-
-[sub_resource type="Animation" id=7]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("dead/Collision:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -8, 1 ) ]
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -93,13 +78,23 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 35, 0 ), Vector2( -35, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [node name="Slime" type="Node2D"]
 script = ExtResource( 11 )
 
 [node name="Slime" type="KinematicBody2D" parent="."]
-collision_layer = 4
-collision_mask = 4
 motion/sync_to_physics = true
 moving_platform_apply_velocity_on_leave = 1
 
@@ -108,7 +103,7 @@ light_mask = 2
 position = Vector2( 0, -2 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Slime/Sprite"]
@@ -121,6 +116,7 @@ shadow_filter = 5
 shadow_filter_smooth = 1.0
 
 [node name="Collision" type="CollisionShape2D" parent="Slime"]
+position = Vector2( 0, 0.5 )
 shape = SubResource( 2 )
 disabled = true
 
@@ -130,12 +126,7 @@ collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="Slime/dead"]
 self_modulate = Color( 0.219608, 0, 1, 1 )
-position = Vector2( -8, 1 )
-shape = SubResource( 4 )
-
-[node name="Collision2" type="CollisionShape2D" parent="Slime/dead"]
-self_modulate = Color( 0.219608, 0, 1, 1 )
-position = Vector2( 8, 0.875 )
+position = Vector2( 0, 0.75 )
 shape = SubResource( 4 )
 
 [node name="head" type="Area2D" parent="Slime"]
@@ -144,7 +135,7 @@ collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="Slime/head"]
 self_modulate = Color( 0.756863, 1, 0, 1 )
-position = Vector2( 0, -6.5125 )
+position = Vector2( 0, -5.5 )
 shape = SubResource( 6 )
 
 [node name="MoveAnimation" type="AnimationPlayer" parent="."]
@@ -152,8 +143,8 @@ root_node = NodePath("../Slime")
 autoplay = "normal"
 playback_process_mode = 0
 method_call_mode = 1
-anims/0 = SubResource( 5 )
 anims/RESET = SubResource( 7 )
 anims/normal = SubResource( 3 )
 
+[connection signal="body_entered" from="Slime/dead" to="." method="dead_entered"]
 [connection signal="body_entered" from="Slime/head" to="." method="head_entered"]
