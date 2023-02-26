@@ -21,6 +21,8 @@ var state :int = State.LOUD setget set_state
 
 func _ready():
 	_slider.value = get_node("/root/Save").volume
+	if _slider.value == 0:
+		set_state(0)
 
 func _exit_tree():
 	save()
