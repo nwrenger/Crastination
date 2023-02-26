@@ -1,14 +1,23 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Fonts/HachicroUndertaleFont/HachicroUndertaleBattleFontRegular-L3zlg.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Player/PlayerSprites.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://World/Title.gd" type="Script" id=3]
 [ext_resource path="res://World/Level/Level1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://UI/MuteButton/Mute.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Music/MusicStopButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/Light/spot.png" type="Texture" id=6]
 [ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/Itch.ioButton/ItchioButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Fonts/TitleText.tres" type="DynamicFont" id=9]
+[ext_resource path="res://UI/Fullscreen/FullscreenButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/Level/Level2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/Level/Level3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://World/Level/Level4.tscn" type="PackedScene" id=13]
+[ext_resource path="res://World/Level/Level6.tscn" type="PackedScene" id=14]
+[ext_resource path="res://World/Level/Level5.tscn" type="PackedScene" id=15]
+[ext_resource path="res://World/Level/Level8.tscn" type="PackedScene" id=16]
+[ext_resource path="res://World/Level/Level7.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Fonts/ButtonText.tres" type="DynamicFont" id=18]
 
 [sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 418, 73, 418, 78, 413, 78, 413, 103, 418, 103, 418, 108, 443, 108, 443, 103, 448, 103, 448, 78, 443, 78, 443, 73 )
@@ -155,7 +164,29 @@ shadow_filter_smooth = 1.0
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 script = ExtResource( 3 )
-NextScene = ExtResource( 4 )
+Level1 = ExtResource( 4 )
+Level2 = ExtResource( 11 )
+Level3 = ExtResource( 12 )
+Level4 = ExtResource( 13 )
+Level5 = ExtResource( 15 )
+Level6 = ExtResource( 14 )
+Level7 = ExtResource( 17 )
+Level8 = ExtResource( 16 )
+
+[node name="CurrentLevel" type="RichTextLabel" parent="Canvas"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -170.5
+margin_top = 26.0
+margin_right = 170.5
+margin_bottom = 66.0
+custom_fonts/normal_font = ExtResource( 18 )
+text = "Current Level:"
+
+[node name="FullscreenButton" parent="Canvas" instance=ExtResource( 10 )]
 
 [node name="ItchioButton" parent="Canvas" instance=ExtResource( 8 )]
 anchor_left = 1.0
@@ -180,6 +211,16 @@ custom_fonts/font = SubResource( 2 )
 toggle_mode = true
 text = "PLAY"
 
+[node name="ClearData" type="Button" parent="Canvas"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = -35.0
+margin_right = 343.0
+margin_bottom = -5.0
+custom_fonts/font = ExtResource( 18 )
+text = "Clear Save Data"
+
 [node name="Text" type="RichTextLabel" parent="Canvas"]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -190,7 +231,7 @@ margin_bottom = 116.0
 custom_fonts/normal_font = ExtResource( 9 )
 text = "crastination"
 
-[node name="Mute" parent="Canvas" instance=ExtResource( 5 )]
+[node name="MusicStopButton" parent="Canvas" instance=ExtResource( 5 )]
 
 [node name="AnimationFade" type="AnimationPlayer" parent="Canvas"]
 anims/FadeIn = SubResource( 3 )
@@ -209,3 +250,4 @@ margin_bottom = 377.5
 mouse_filter = 2
 
 [connection signal="pressed" from="Canvas/Button" to="Canvas" method="toggle"]
+[connection signal="pressed" from="Canvas/ClearData" to="Canvas" method="ClearData_pressed"]
