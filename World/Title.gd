@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+export var Start: PackedScene
 export var Level1: PackedScene
 export var Level2: PackedScene
 export var Level3: PackedScene
@@ -25,9 +26,9 @@ func toggle():
 	# warning-ignore:return_value_discarded
 
 		#todo for loop
-		#for first time playing scene
+		#for first time playing sceneTitle.tscn
 	if 0 == get_node("/root/Save").level:
-		get_tree().change_scene_to(Level1)
+		get_tree().change_scene_to(Start)
 	elif 1 == get_node("/root/Save").level:
 		get_tree().change_scene_to(Level1)
 	elif 2 == get_node("/root/Save").level:
