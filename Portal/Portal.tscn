@@ -94,3 +94,5 @@ margin_top = -384.0
 margin_right = 667.0
 margin_bottom = 371.0
 mouse_filter = 2
+
+[connection signal="body_entered" from="Area" to="." method="Area_entered"]
