@@ -11,7 +11,7 @@ func _ready():
 	if f.open(file, File.READ) == OK:
 		var save = parse_json(f.get_as_text())
 		if save is Dictionary:
-			print(save)
+#			print(save)
 			OS.window_fullscreen = save.get("fullscreen", OS.window_fullscreen)
 			volume = save.get("volume", volume)
 			level = save.get("level", level)
@@ -23,7 +23,7 @@ func _notification(what):
 			#todo save
 			for node in get_tree().get_nodes_in_group("Save"):
 				node.save()
-			print("saving")
+#			print("saving")
 			var f := File.new()
 			if f.open(file, File.WRITE) == OK:
 				var save = {
