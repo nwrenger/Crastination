@@ -128,7 +128,7 @@ tile_data = PoolIntArray( 589829, 4, 0, 589830, 5, 0, 589831, 3, 0, 589832, 5, 0
 light_mask = 2
 position = Vector2( 101.8, 56 )
 frames = SubResource( 5 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Light" type="Light2D" parent="TileMap/Cat"]
@@ -145,13 +145,14 @@ texture_scale = 0.6
 shadow_gradient_length = 2.0
 
 [node name="DarkCat" type="Node2D" parent="TileMap"]
+light_mask = 3
 
 [node name="Sprite" type="AnimatedSprite" parent="TileMap/DarkCat"]
 modulate = Color( 0, 0, 0, 0 )
 light_mask = 2
 position = Vector2( 127.2, 56 )
 frames = SubResource( 5 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Light" type="Light2D" parent="TileMap/DarkCat"]
