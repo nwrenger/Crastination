@@ -128,7 +128,6 @@ tile_data = PoolIntArray( 589829, 4, 0, 589830, 5, 0, 589831, 3, 0, 589832, 5, 0
 light_mask = 2
 position = Vector2( 101.8, 56 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="Light" type="Light2D" parent="TileMap/Cat"]
@@ -152,7 +151,6 @@ modulate = Color( 0, 0, 0, 0 )
 light_mask = 2
 position = Vector2( 127.2, 56 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="Light" type="Light2D" parent="TileMap/DarkCat"]
