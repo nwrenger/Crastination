@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://World/Terrain/Tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://Player/CatSpriteSheet.png" type="Texture" id=3]
 [ext_resource path="res://World/Light/spot.png" type="Texture" id=4]
 [ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=5]
@@ -209,7 +208,7 @@ light_mask = 2
 position = Vector2( -4.47035e-08, 16 )
 frames = ExtResource( 6 )
 animation = "idle"
-frame = 11
+frame = 10
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -247,7 +246,6 @@ position = Vector2( 246.667, 0.333333 )
 modulate = Color( 0, 0, 0, 1 )
 light_mask = 2
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="Light" type="Light2D" parent="DarkCat"]
@@ -274,9 +272,6 @@ shadow_item_cull_mask = 3
 anims/RESET = SubResource( 12 )
 anims/main = SubResource( 11 )
 script = ExtResource( 7 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 2 )
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 
