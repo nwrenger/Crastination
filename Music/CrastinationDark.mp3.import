@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/CrastinationDark.mp3-f0ed435109f27251f8ced5df23a4aaa1.mp3str"
+uid="uid://b5guggfh2po73"
+path="res://.godot/imported/CrastinationDark.mp3-f0ed435109f27251f8ced5df23a4aaa1.mp3str"
 
 [deps]
 
 source_file="res://Music/CrastinationDark.mp3"
-dest_files=[ "res://.import/CrastinationDark.mp3-f0ed435109f27251f8ced5df23a4aaa1.mp3str" ]
+dest_files=["res://.godot/imported/CrastinationDark.mp3-f0ed435109f27251f8ced5df23a4aaa1.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=2.0
+bpm=0
+beat_count=0
+bar_beats=4

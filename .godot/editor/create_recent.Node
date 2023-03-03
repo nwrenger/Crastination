@@ -1,0 +1,8 @@
+TileMap
+Node2D
+CollisionPolygon2D
+CollisionShape2D
+AnimatableBody2D
+Area2D
+StaticBody2D
+PointLight2D

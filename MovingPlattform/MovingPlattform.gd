@@ -1,10 +1,9 @@
 extends Node2D
 
-
-export var animationleft := false
+@export var animationleft := false
 
 func _ready():
 	if animationleft:
-		$Animation.current_animation = "movingleft"
+		$Animation.play("movingleft")
 	else:
-		$Animation.current_animation = "movingright"
+		$Animation.play("movingright")

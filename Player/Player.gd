@@ -1,14 +1,13 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-export var on_ground := false
-export (int) var player_speed = 350
-export (int) var jump_height = -550
-export (int) var gravity = 1500
-export (int) var fall_speed_limit = 500
-export (float, 0, 1.0) var friction = 0.1
-export (float, 0, 1.0) var acceleration = 0.13
+@export var on_ground := false
+@export var player_speed := 350.0
+@export var jump_height := -550
+@export var gravity := 1500
+@export var fall_speed_limit := 500
+@export var friction := 0.1
+@export var acceleration := 0.13
 
-var velocity = Vector2.ZERO
 var jump_timer := 0.0
 var notwall := false
 
@@ -21,31 +20,25 @@ signal move
 signal upitgoes
 
 
-func _ready():
-	$Animation.play("FadeIn")
-
-
 func get_input():
-	var dir = 0
+	var dir = 0.0
 	if Input.is_action_pressed("ui_right"):
 		if notwall:
-			dir += 1
-		wall_left = false
+			dir += 1.0
 	if Input.is_action_pressed("ui_left"):
 		if notwall:
-			dir -= 1
-		wall_right = false
+			dir -= 1.0
 	if Input.is_key_pressed(KEY_R):
 		get_tree().reload_current_scene()
-	if dir != 0:
+	if dir != 0.0:
 		velocity.x = lerp(velocity.x, dir * player_speed, acceleration)
 	else:
-		velocity.x = lerp(velocity.x, 0, friction)
+		velocity.x = lerp(velocity.x, 0.0, friction)
 
 
 func _physics_process(delta):
 	get_input()
-
+	
 	if $WallLeft.get_overlapping_bodies():
 		wall_left = true
 	else:
@@ -54,12 +47,13 @@ func _physics_process(delta):
 		wall_right = true
 	else:
 		wall_right = false
-
-	if wall_left or wall_right:
+	
+	if wall_right or wall_left:
 		notwall = false
 	else:
 		notwall = true
-
+	
+	
 	$WallLeft/SlideParticles.emitting = wall_left
 	$WallRight/SlideParticles.emitting = wall_right
 	$WallLeft/SlideParticles2.emitting = wall_left
@@ -92,7 +86,8 @@ func _physics_process(delta):
 				wall_fall_speed_final = wall_fall_speed
 			velocity.y = wall_fall_speed_final
 
-	velocity = move_and_slide(velocity, Vector2.UP)
+	set_velocity(velocity)
+	move_and_slide()
 	emit_signal("move", velocity, wall_right, wall_left, on_ground)
 	if is_on_floor() and not on_ground:
 		on_ground = true

@@ -1,190 +1,126 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=13 format=3 uid="uid://dnxwy1ijemslv"]
 
-[ext_resource path="res://World/Terrain/Tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player/CatSpriteSheet.png" type="Texture" id=3]
-[ext_resource path="res://World/Light/spot.png" type="Texture" id=4]
-[ext_resource path="res://UI/PauseMenu/PauseMenu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Level/Start.gd" type="Script" id=6]
+[ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="1"]
+[ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://c0um0smge7r6p" path="res://Player/CatSpriteSheet.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://dn47eubrdwcgl" path="res://UI/PauseMenu/PauseMenu.tscn" id="5"]
+[ext_resource type="Script" path="res://World/Level/Start.gd" id="6"]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 192, 32, 32 )
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("3")
+region = Rect2(0, 192, 32, 32)
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 192, 32, 32 )
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("3")
+region = Rect2(32, 192, 32, 32)
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 3 )
-region = Rect2( 64, 192, 32, 32 )
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("3")
+region = Rect2(64, 192, 32, 32)
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 3 )
-region = Rect2( 96, 192, 32, 32 )
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("3")
+region = Rect2(96, 192, 32, 32)
 
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+[sub_resource type="SpriteFrames" id="5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("1")
+}, {
+"duration": 1.0,
+"texture": SubResource("2")
+}, {
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id="6"]
 resource_name = "main"
 length = 13.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("CanvasLayer/ColorRect:self_modulate")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3, 8, 13 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 3, 8, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("TileMap/DarkCat/Sprite:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
+tracks/1/path = NodePath("TileMap/DarkCat/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 5, 7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 5, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("TileMap/DarkCat/Light:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 5, 7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0.45098, 0.45098, 0.45098, 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("TileMap/DarkCat/Light2:color")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 5, 7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0.45098, 0.45098, 0.45098, 1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("TileMap/Cat/Light:color")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("TileMap/Cat/Light2:color")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpt4h"]
+_data = {
+"main": SubResource("6")
 }
 
 [node name="Start" type="Node2D"]
-script = ExtResource( 6 )
+script = ExtResource("6")
 
 [node name="TileMap" type="TileMap" parent="."]
-scale = Vector2( 5, 5 )
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 8 )
-show_collision = true
-collision_layer = 3
-collision_mask = 3
-format = 1
-tile_data = PoolIntArray( 589829, 4, 0, 589830, 5, 0, 589831, 3, 0, 589832, 5, 0, 589833, 3, 0, 589834, 5, 0, 589835, 3, 0, 589836, 5, 0, 589837, 3, 0, 589838, 5, 0, 589839, 3, 0, 589840, 5, 0, 589841, 3, 0, 589842, 5, 0, 589843, 3, 0, 589844, -1610612732, 0, 655365, -1073741820, 0, 655366, 1610612736, 0, 655367, -2147483646, 0, 655368, -1610612735, 0, 655369, 1073741826, 0, 655370, 1610612736, 0, 655371, -1073741822, 0, 655372, 1610612736, 0, 655373, 1610612736, 0, 655374, 1610612736, 0, 655375, 1610612736, 0, 655376, -1610612734, 0, 655377, 1610612737, 0, 655378, 2, 0, 655379, -2147483646, 0, 655380, 1610612740, 0, 720902, -1073741820, 0, 720903, 1610612739, 0, 720904, -1610612734, 0, 720905, 1610612736, 0, 720906, 1073741826, 0, 720907, 536870913, 0, 720908, 2, 0, 720909, 1610612736, 0, 720910, 1610612736, 0, 720911, 1610612738, 0, 720912, 1610612741, 0, 720913, 1610612739, 0, 720914, 1610612741, 0, 720915, 1610612740, 0, 786440, -1073741820, 0, 786441, 1610612741, 0, 786442, 1610612739, 0, 786443, 1610612741, 0, 786444, 1610612739, 0, 786445, 1610612741, 0, 786446, 1610612739, 0, 786447, 1610612740, 0 )
+scale = Vector2(5, 5)
+tile_set = ExtResource("1")
+format = 2
+layer_0/tile_data = PackedInt32Array(589829, 4, 0, 589830, 5, 0, 589831, 3, 0, 589832, 5, 0, 589833, 3, 0, 589834, 5, 0, 589835, 3, 0, 589836, 5, 0, 589837, 3, 0, 589838, 5, 0, 589839, 3, 0, 589840, 5, 0, 589841, 3, 0, 589842, 5, 0, 589843, 3, 0, 589844, 4, 327680, 655365, 4, 393216, 655366, 0, 196608, 655367, 2, 262144, 655368, 1, 327680, 655369, 2, 131072, 655370, 0, 196608, 655371, 2, 393216, 655372, 0, 196608, 655373, 0, 196608, 655374, 0, 196608, 655375, 0, 196608, 655376, 2, 327680, 655377, 1, 196608, 655378, 2, 0, 655379, 2, 262144, 655380, 4, 196608, 720902, 4, 393216, 720903, 3, 196608, 720904, 2, 327680, 720905, 0, 196608, 720906, 2, 131072, 720907, 1, 65536, 720908, 2, 0, 720909, 0, 196608, 720910, 0, 196608, 720911, 2, 196608, 720912, 5, 196608, 720913, 3, 196608, 720914, 5, 196608, 720915, 4, 196608, 786440, 4, 393216, 786441, 5, 196608, 786442, 3, 196608, 786443, 5, 196608, 786444, 3, 196608, 786445, 5, 196608, 786446, 3, 196608, 786447, 4, 196608)
 
-[node name="Background" parent="TileMap" instance=ExtResource( 2 )]
+[node name="Background" parent="TileMap" instance=ExtResource("2")]
 
 [node name="Cat" type="Node2D" parent="TileMap"]
 
-[node name="Sprite" type="AnimatedSprite" parent="TileMap/Cat"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="TileMap/Cat"]
 light_mask = 2
-position = Vector2( 101.8, 56 )
-frames = SubResource( 5 )
-playing = true
-
-[node name="Light" type="Light2D" parent="TileMap/Cat"]
-position = Vector2( 101.8, 66 )
-texture = ExtResource( 4 )
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_buffer_size = 4096
-
-[node name="Light2" type="Light2D" parent="TileMap/Cat"]
-light_mask = 3
-position = Vector2( 102.8, 65 )
-texture = ExtResource( 4 )
-texture_scale = 0.6
-shadow_gradient_length = 2.0
+position = Vector2(101.8, 56)
+sprite_frames = SubResource("5")
+autoplay = "default"
+frame_progress = 0.252574
 
 [node name="DarkCat" type="Node2D" parent="TileMap"]
 light_mask = 3
 
-[node name="Sprite" type="AnimatedSprite" parent="TileMap/DarkCat"]
-modulate = Color( 0, 0, 0, 0 )
+[node name="Sprite2D" type="AnimatedSprite2D" parent="TileMap/DarkCat"]
+modulate = Color(0, 0, 0, 0)
 light_mask = 2
-position = Vector2( 127.2, 56 )
-frames = SubResource( 5 )
-playing = true
-
-[node name="Light" type="Light2D" parent="TileMap/DarkCat"]
-light_mask = 3
-position = Vector2( 127.2, 66 )
-texture = ExtResource( 4 )
-color = Color( 0, 0, 0, 0 )
-mode = 2
-shadow_buffer_size = 4096
-shadow_item_cull_mask = 3
-
-[node name="Light2" type="Light2D" parent="TileMap/DarkCat"]
-light_mask = 3
-position = Vector2( 128.2, 65 )
-texture = ExtResource( 4 )
-texture_scale = 0.6
-color = Color( 0, 0, 0, 0 )
-mode = 2
-shadow_gradient_length = 2.0
-shadow_item_cull_mask = 3
+position = Vector2(127.2, 56)
+sprite_frames = SubResource("5")
+autoplay = "default"
+frame_progress = 0.634095
 
 [node name="AnimationFade" type="AnimationPlayer" parent="."]
 method_call_mode = 1
-anims/main = SubResource( 6 )
+libraries = {
+"": SubResource("AnimationLibrary_jpt4h")
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_right = 1280.0
-margin_bottom = 720.0
-color = Color( 0, 0, 0, 1 )
+self_modulate = Color(0, 0, 0, 1)
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 5 )]
-pause_mode = 2
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5")]
+process_mode = 3
 
 [connection signal="animation_finished" from="AnimationFade" to="." method="_on_Animation_animation_finished"]
