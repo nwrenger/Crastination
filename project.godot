@@ -20,8 +20,8 @@ config/windows_native_icon="res://icon.png"
 
 [autoload]
 
-Music="*res://Music/Music.tscn"
 Save="*res://UI/Save.gd"
+Music="*res://Music/Music.tscn"
 
 [display]
 
