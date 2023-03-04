@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmopgmk8epuig"]
+[gd_scene load_steps=9 format=3 uid="uid://bmopgmk8epuig"]
 
 [ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="2"]
 [ext_resource type="Script" path="res://World/Level/Level10/MessagePortal.gd" id="3"]
 [ext_resource type="FontFile" path="res://Fonts/Text.tres" id="4_2jieo"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="4_grih5"]
 [ext_resource type="PackedScene" uid="uid://dn47eubrdwcgl" path="res://UI/PauseMenu/PauseMenu.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://duehawf40eucs" path="res://World/Level/Level10/Level10.2.tscn" id="6"]
 
@@ -44,6 +45,14 @@ script = ExtResource("3")
 NextScene = ExtResource("6")
 
 [node name="Background" parent="." instance=ExtResource("2")]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(644, 360)
+blend_mode = 1
+texture = ExtResource("4_grih5")
+texture_scale = 6.35
 
 [node name="AnimationFade" type="AnimationPlayer" parent="."]
 method_call_mode = 1

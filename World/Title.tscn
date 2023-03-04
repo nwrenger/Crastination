@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://djljxmuirevbj"]
+[gd_scene load_steps=32 format=3 uid="uid://djljxmuirevbj"]
 
 [ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="2_m74x0"]
 [ext_resource type="Script" path="res://World/Title.gd" id="3"]
-[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="3_wda88"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="3_ulocx"]
 [ext_resource type="PackedScene" uid="uid://cgrs1mfj4e2jd" path="res://World/Level/Level1.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://rpwxhbcs7gbf" path="res://World/Light/light.png" id="4_2psgt"]
 [ext_resource type="PackedScene" uid="uid://bku0f3at4d2mb" path="res://UI/Music/MusicStopButton.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://bacx1pf3uyllq" path="res://UI/Itch.ioButton/ItchioButton.tscn" id="8"]
@@ -59,6 +60,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PointLight2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="4"]
 resource_name = "FadeOut"
@@ -73,6 +86,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PointLight2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vp76y"]
@@ -98,7 +123,7 @@ metadata/_edit_group_ = true
 [node name="NoShadow" type="PointLight2D" parent="CatSprite"]
 position = Vector2(0, 7)
 energy = 0.75
-texture = ExtResource("3_wda88")
+texture = ExtResource("3_ulocx")
 texture_scale = 0.6
 
 [node name="Shadow" type="PointLight2D" parent="CatSprite"]
@@ -109,7 +134,7 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 2
 shadow_item_cull_mask = 3
-texture = ExtResource("3_wda88")
+texture = ExtResource("3_ulocx")
 
 [node name="Shadow" type="Node2D" parent="."]
 position = Vector2(0, 2)
@@ -162,6 +187,14 @@ occluder = SubResource("12")
 position = Vector2(187, 0)
 occluder = SubResource("11")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(660, 363)
+energy = 7.0
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("4_2psgt")
+
 [node name="Canvas" type="CanvasLayer" parent="."]
 script = ExtResource("3")
 Start = ExtResource("19")
@@ -177,6 +210,7 @@ Level9 = ExtResource("20")
 Level10 = ExtResource("21")
 
 [node name="CurrentLevel" type="RichTextLabel" parent="Canvas"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

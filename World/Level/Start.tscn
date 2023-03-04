@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://c0um0smge7r6p" path="res://Player/CatSpriteSheet.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://dn47eubrdwcgl" path="res://UI/PauseMenu/PauseMenu.tscn" id="5"]
-[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="5_3xjon"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="5_w1lyf"]
 [ext_resource type="Script" path="res://World/Level/Start.gd" id="6"]
 
 [sub_resource type="AtlasTexture" id="1"]
@@ -114,7 +114,6 @@ layer_0/tile_data = PackedInt32Array(589829, 4, 0, 589830, 5, 0, 589831, 3, 0, 5
 [node name="Cat" type="AnimatedSprite2D" parent="TileMap"]
 light_mask = 2
 position = Vector2(101.8, 56)
-scale = Vector2(1, 1)
 sprite_frames = SubResource("5")
 autoplay = "default"
 frame_progress = 0.252574
@@ -122,7 +121,7 @@ frame_progress = 0.252574
 [node name="NoShadow" type="PointLight2D" parent="TileMap/Cat"]
 position = Vector2(0, 7)
 energy = 0.75
-texture = ExtResource("5_3xjon")
+texture = ExtResource("5_w1lyf")
 texture_scale = 0.6
 
 [node name="Shadow" type="PointLight2D" parent="TileMap/Cat"]
@@ -133,13 +132,12 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 2
 shadow_item_cull_mask = 3
-texture = ExtResource("5_3xjon")
+texture = ExtResource("5_w1lyf")
 
 [node name="DarkCat" type="AnimatedSprite2D" parent="TileMap"]
 modulate = Color(0, 0, 0, 0)
 light_mask = 2
 position = Vector2(127.2, 56)
-scale = Vector2(1, 1)
 sprite_frames = SubResource("5")
 autoplay = "default"
 frame_progress = 0.634095
@@ -149,7 +147,7 @@ position = Vector2(0, 7)
 color = Color(1, 1, 1, 0)
 energy = 0.0
 blend_mode = 1
-texture = ExtResource("5_3xjon")
+texture = ExtResource("5_w1lyf")
 texture_scale = 0.6
 
 [node name="Shadow" type="PointLight2D" parent="TileMap/DarkCat"]
@@ -163,7 +161,7 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 2
 shadow_item_cull_mask = 3
-texture = ExtResource("5_3xjon")
+texture = ExtResource("5_w1lyf")
 
 [node name="AnimationFade" type="AnimationPlayer" parent="."]
 autoplay = "main"

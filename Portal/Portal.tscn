@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://7n38l6qxvcdc" path="res://Portal/bottom.png" id="1"]
 [ext_resource type="Script" path="res://Portal/Portal.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="2_wppsw"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="2_v70qq"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(30, 1.875)
@@ -67,7 +67,7 @@ position = Vector2(0, -2)
 color = Color(0, 0, 1, 1)
 shadow_enabled = true
 shadow_filter = 2
-texture = ExtResource("2_wppsw")
+texture = ExtResource("2_v70qq")
 
 [node name="Particles" type="GPUParticles2D" parent="."]
 material = SubResource("5")

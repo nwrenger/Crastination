@@ -1,48 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://bfblk6ugj6f1y"]
+[gd_scene load_steps=17 format=3 uid="uid://bfblk6ugj6f1y"]
 
 [ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="1"]
 [ext_resource type="Texture2D" uid="uid://c0um0smge7r6p" path="res://Player/CatSpriteSheet.png" id="3"]
 [ext_resource type="FontFile" path="res://Fonts/Text.tres" id="4_26j2g"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="4_fwcni"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="5"]
 [ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="6"]
 [ext_resource type="Script" path="res://World/Level/Level10/Animation.gd" id="7"]
 [ext_resource type="PackedScene" uid="uid://dn47eubrdwcgl" path="res://UI/PauseMenu/PauseMenu.tscn" id="8"]
-
-[sub_resource type="AtlasTexture" id="7"]
-atlas = ExtResource("3")
-region = Rect2(0, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="8"]
-atlas = ExtResource("3")
-region = Rect2(32, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="9"]
-atlas = ExtResource("3")
-region = Rect2(64, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="10"]
-atlas = ExtResource("3")
-region = Rect2(96, 192, 32, 32)
-
-[sub_resource type="SpriteFrames" id="5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("7")
-}, {
-"duration": 1.0,
-"texture": SubResource("8")
-}, {
-"duration": 1.0,
-"texture": SubResource("9")
-}, {
-"duration": 1.0,
-"texture": SubResource("10")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="Animation" id="12"]
 length = 0.001
@@ -58,6 +23,78 @@ tracks/0/keys = {
 "update": 0,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarkCat/NoShadow:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DarkCat/Shadow:texture_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DarkCat/NoShadow:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.75]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DarkCat/Shadow:energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cat/Sprite2D/NoShadow:energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.75]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Cat/Sprite2D/Shadow:energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="11"]
 resource_name = "main"
@@ -72,7 +109,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.5, 0.5), Vector2(1.5, 1.5)]
+"values": [Vector2(1.6, 1.6), Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -117,10 +154,82 @@ tracks/4/path = NodePath("Cat:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 15.5, 18.1),
+"times": PackedFloat32Array(0, 15.5, 25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 400)]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 1400)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DarkCat/NoShadow:texture_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 6, 8, 10, 14, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.5, 1.5, 2.0, 3.0, 20.0, 50.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DarkCat/Shadow:texture_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 6, 8, 10, 14, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 2.0, 2.5, 3.5, 25.0, 50.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DarkCat/NoShadow:energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 14, 17.1, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.75, 0.75, 1.5, 7.5]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DarkCat/Shadow:energy")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 14, 17.1, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 2.0, 10.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Cat/Sprite2D/NoShadow:energy")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 15.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.75, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Cat/Sprite2D/Shadow:energy")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 15.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vth85"]
@@ -128,6 +237,42 @@ _data = {
 "RESET": SubResource("12"),
 "main": SubResource("11")
 }
+
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("3")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("3")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("3")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("3")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vi0oh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("1")
+}, {
+"duration": 1.0,
+"texture": SubResource("2")
+}, {
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Level10" type="TileMap"]
 scale = Vector2(3, 3)
@@ -141,14 +286,31 @@ layer_0/tile_data = PackedInt32Array(-393261, 4, 262144, -393260, 5, 65536, -393
 
 [node name="Camera2D" type="Camera2D" parent="Cat"]
 position = Vector2(0, 26)
-zoom = Vector2(1.1125, 1.1125)
+zoom = Vector2(1.6, 1.6)
+position_smoothing_enabled = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Cat"]
 light_mask = 2
 position = Vector2(-4.47035e-08, 16)
 sprite_frames = ExtResource("6")
 animation = &"idle"
-frame = 1
+autoplay = "idle"
+
+[node name="NoShadow" type="PointLight2D" parent="Cat/Sprite2D"]
+position = Vector2(0, 7)
+energy = 0.75
+texture = ExtResource("4_fwcni")
+texture_scale = 0.6
+
+[node name="Shadow" type="PointLight2D" parent="Cat/Sprite2D"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0, 7)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_item_cull_mask = 3
+texture = ExtResource("4_fwcni")
 
 [node name="Text" type="RichTextLabel" parent="."]
 offset_left = 123.0
@@ -159,21 +321,37 @@ theme_override_fonts/normal_font = ExtResource("4_26j2g")
 theme_override_font_sizes/normal_font_size = 7
 text = "->"
 
-[node name="DarkCat" type="Node2D" parent="."]
-light_mask = 3
-position = Vector2(246.667, 0.333333)
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="DarkCat"]
-modulate = Color(0, 0, 0, 1)
-light_mask = 2
-sprite_frames = SubResource("5")
-frame = 1
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_vth85")
 }
 script = ExtResource("7")
+
+[node name="DarkCat" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+light_mask = 2
+position = Vector2(246.667, 0.333333)
+sprite_frames = SubResource("SpriteFrames_vi0oh")
+autoplay = "default"
+
+[node name="NoShadow" type="PointLight2D" parent="DarkCat"]
+position = Vector2(0, 7)
+energy = 0.75
+blend_mode = 1
+texture = ExtResource("4_fwcni")
+texture_scale = 1.5
+
+[node name="Shadow" type="PointLight2D" parent="DarkCat"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0, 7)
+blend_mode = 1
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_item_cull_mask = 3
+texture = ExtResource("4_fwcni")
+texture_scale = 2.0
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 
@@ -182,8 +360,8 @@ self_modulate = Color(0, 0, 0, 1)
 offset_left = -2110.0
 offset_top = -950.0
 offset_right = 2104.0
-offset_bottom = 1044.0
-color = Color(0, 0, 0, 0)
+offset_bottom = 4949.0
+color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" parent="Canvas" instance=ExtResource("8")]
 

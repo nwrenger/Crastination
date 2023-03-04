@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="2"]
 [ext_resource type="PackedScene" uid="uid://dn47eubrdwcgl" path="res://UI/PauseMenu/PauseMenu.tscn" id="3"]
 [ext_resource type="Material" uid="uid://0jweq12vjyw8" path="res://Player/SlideParticles.tres" id="4"]
-[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="5_78lhg"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="5_ovvjo"]
 [ext_resource type="Texture2D" uid="uid://xdhedbvq4fc3" path="res://World/Terrain/background.png" id="6"]
 [ext_resource type="Script" path="res://Player/Animation.gd" id="7"]
 [ext_resource type="Texture2D" uid="uid://8q1ncf4m00i8" path="res://Player/SlidePartGradient.tres" id="7_hf0vw"]
@@ -49,7 +49,7 @@ script = ExtResource("7")
 [node name="NoShadow" type="PointLight2D" parent="CatSprite"]
 position = Vector2(0, 7)
 energy = 0.75
-texture = ExtResource("5_78lhg")
+texture = ExtResource("5_ovvjo")
 texture_scale = 0.6
 
 [node name="Shadow" type="PointLight2D" parent="CatSprite"]
@@ -60,7 +60,7 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter = 2
 shadow_item_cull_mask = 3
-texture = ExtResource("5_78lhg")
+texture = ExtResource("5_ovvjo")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 modulate = Color(0.756863, 0, 1, 1)
