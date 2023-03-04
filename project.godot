@@ -29,6 +29,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
 
+[editor]
+
+movie_writer/movie_file="/home/icu/Downloads/Test.avi"
+
 [input]
 
 ui_left={
