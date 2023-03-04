@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://duehawf40eucs"]
+[gd_scene load_steps=14 format=3 uid="uid://duehawf40eucs"]
 
-[ext_resource type="TileSet" path="res://World/Terrain/Tileset.tres" id="1"]
-[ext_resource type="PackedScene" path="res://Player/Player.tscn" id="2"]
-[ext_resource type="Texture2D" uid="uid://3e4uteyfmkus" path="res://Player/CatSpriteSheet.png" id="3"]
+[ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="1"]
+[ext_resource type="PackedScene" uid="uid://ct0spru8yxrym" path="res://Player/Player.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://c0um0smge7r6p" path="res://Player/CatSpriteSheet.png" id="3"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="4_65v32"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Borders.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://Portal/Portal.tscn" id="7"]
-[ext_resource type="PackedScene" path="res://World/Level/Level10/MessagePortal2.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://bsprmlvm1l1e5" path="res://Portal/Portal.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://b1fi4ws025kga" path="res://World/Level/Level10/MessagePortal2.tscn" id="8"]
 
 [sub_resource type="AtlasTexture" id="1"]
 atlas = ExtResource("3")
@@ -57,9 +58,11 @@ position = Vector2(0, 190.333)
 
 [node name="Text" type="RichTextLabel" parent="."]
 offset_left = 123.0
-offset_top = -11.6667
-offset_right = 142.0
-offset_bottom = -0.666667
+offset_top = -12.0
+offset_right = 161.0
+offset_bottom = -1.0
+theme_override_fonts/normal_font = ExtResource("4_65v32")
+theme_override_font_sizes/normal_font_size = 7
 text = "->"
 
 [node name="Portal" parent="." instance=ExtResource("7")]

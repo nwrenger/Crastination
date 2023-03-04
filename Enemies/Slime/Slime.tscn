@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://csls6t3rsm324"]
+[gd_scene load_steps=20 format=3 uid="uid://csls6t3rsm324"]
 
 [ext_resource type="Texture2D" uid="uid://6s1qb1c5q8bh" path="res://Enemies/Slime/death/slime_death 6.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://xixso666o782" path="res://Enemies/Slime/death/slime_death 2.png" id="2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://do0vfm15wvgey" path="res://Enemies/Slime/idle/slime 3.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://dgoga60xoqxa7" path="res://Enemies/Slime/idle/slime 4.png" id="10"]
 [ext_resource type="Script" path="res://Enemies/Slime/Slime.gd" id="11"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="12_ro8w2"]
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
@@ -138,6 +139,24 @@ sprite_frames = SubResource("1")
 animation = &"idle"
 autoplay = "idle"
 frame = 3
+
+[node name="NoShadow" type="PointLight2D" parent="Slime/Sprite2D"]
+position = Vector2(0, 7)
+color = Color(0.898039, 0, 0.2, 1)
+energy = 0.75
+texture = ExtResource("12_ro8w2")
+texture_scale = 0.6
+
+[node name="Shadow" type="PointLight2D" parent="Slime/Sprite2D"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0, 7)
+color = Color(0.898039, 0, 0.2, 1)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_item_cull_mask = 3
+texture = ExtResource("12_ro8w2")
 
 [node name="Collision" type="CollisionShape2D" parent="Slime"]
 position = Vector2(0, 1.5)

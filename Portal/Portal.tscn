@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsprmlvm1l1e5"]
+[gd_scene load_steps=11 format=3 uid="uid://bsprmlvm1l1e5"]
 
 [ext_resource type="Texture2D" uid="uid://7n38l6qxvcdc" path="res://Portal/bottom.png" id="1"]
 [ext_resource type="Script" path="res://Portal/Portal.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="2_wppsw"]
 
 [sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(30, 1.75)
+size = Vector2(30, 1.875)
 
 [sub_resource type="CanvasItemMaterial" id="5"]
 blend_mode = 1
@@ -24,6 +25,8 @@ gradient = SubResource("3")
 emission_shape = 3
 emission_box_extents = Vector3(16, 0, 0)
 gravity = Vector3(0, -98, 0)
+scale_min = 3.0
+scale_max = 3.0
 color = Color(0, 0.203922, 1, 1)
 color_ramp = SubResource("9")
 
@@ -56,12 +59,19 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="Area"]
-position = Vector2(0, -0.875)
+position = Vector2(0, -0.9375)
 shape = SubResource("1")
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(0, -2)
+color = Color(0, 0, 1, 1)
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("2_wppsw")
 
 [node name="Particles" type="GPUParticles2D" parent="."]
 material = SubResource("5")
-position = Vector2(0, -0.5)
+position = Vector2(0, -1)
 amount = 12
 process_material = SubResource("2")
 

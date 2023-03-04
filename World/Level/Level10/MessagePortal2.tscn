@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1fi4ws025kga"]
+[gd_scene load_steps=8 format=3 uid="uid://b1fi4ws025kga"]
 
 [ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="2"]
 [ext_resource type="Script" path="res://World/Level/Level10/MessagePortal.gd" id="3"]
-[ext_resource type="PackedScene" path="res://UI/PauseMenu/PauseMenu.tscn" id="5"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="4_k8eql"]
+[ext_resource type="PackedScene" uid="uid://dn47eubrdwcgl" path="res://UI/PauseMenu/PauseMenu.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://eb41jdp3nuwn" path="res://World/Level/Level10/Level10.3.tscn" id="6"]
 
 [sub_resource type="Animation" id="1"]
@@ -62,6 +63,8 @@ offset_left = -372.0
 offset_top = -21.0
 offset_right = 414.0
 offset_bottom = 21.0
+theme_override_fonts/normal_font = ExtResource("4_k8eql")
+theme_override_font_sizes/normal_font_size = 35
 text = "DON'T GET DISTRACTED!"
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -72,6 +75,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5")]
 process_mode = 2
-anchors_preset = 8
 
 [connection signal="animation_finished" from="AnimationFade" to="." method="_on_Animation_animation_finished"]

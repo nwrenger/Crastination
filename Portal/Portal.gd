@@ -5,10 +5,9 @@ var TotalLevel := 11
 
 
 func Area_entered(_body):
-#	$Light3D.show()
 	$AnimationFade.play("FadeOut")
-#	$Light3D.energy = 1.8
-#	$Light3D.scale = Vector2(1.5,1.5)
+	$Light.energy = 3
+	$Light.scale = Vector2(1.5,1.5)
 	await $AnimationFade.animation_finished
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene_to_packed(NextScene)

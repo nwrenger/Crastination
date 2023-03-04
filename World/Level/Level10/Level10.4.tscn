@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfblk6ugj6f1y"]
+[gd_scene load_steps=16 format=3 uid="uid://bfblk6ugj6f1y"]
 
 [ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="1"]
 [ext_resource type="Texture2D" uid="uid://c0um0smge7r6p" path="res://Player/CatSpriteSheet.png" id="3"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="4_26j2g"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="5"]
 [ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="6"]
 [ext_resource type="Script" path="res://World/Level/Level10/Animation.gd" id="7"]
@@ -151,9 +152,11 @@ frame = 1
 
 [node name="Text" type="RichTextLabel" parent="."]
 offset_left = 123.0
-offset_top = -11.6667
-offset_right = 142.0
-offset_bottom = -0.666667
+offset_top = -12.0
+offset_right = 154.0
+offset_bottom = -1.0
+theme_override_fonts/normal_font = ExtResource("4_26j2g")
+theme_override_font_sizes/normal_font_size = 7
 text = "->"
 
 [node name="DarkCat" type="Node2D" parent="."]
@@ -183,6 +186,5 @@ offset_bottom = 1044.0
 color = Color(0, 0, 0, 0)
 
 [node name="PauseMenu" parent="Canvas" instance=ExtResource("8")]
-process_mode = 3
 
 [connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="animation_finished"]

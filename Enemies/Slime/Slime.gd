@@ -8,7 +8,8 @@ var already_dead := false
 func head_entered(_body):
 	if already_dead == false:
 		emit_signal("player_killed_slime")
-#		$Slime/Sprite2D/PointLight2D.hide()
+		$Slime/Sprite2D/Shadow.hide()
+		$Slime/Sprite2D/NoShadow.hide()
 		already_dead = true
 		$MoveAnimation.stop(true)
 		$Slime/Sprite2D.play("death")

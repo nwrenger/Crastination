@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhgym5shfxgmk"]
+[gd_scene load_steps=9 format=3 uid="uid://bhgym5shfxgmk"]
 
 [ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="1"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Borders.tscn" id="2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ct0spru8yxrym" path="res://Player/Player.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://bcmgfnx6u47sk" path="res://JumpPlattform/JumpPlattform.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bsprmlvm1l1e5" path="res://Portal/Portal.tscn" id="6"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="7_7cvnd"]
 [ext_resource type="PackedScene" uid="uid://ci5u35t8enmvc" path="res://World/Level/Level6.tscn" id="8"]
 
 [node name="Level5" type="TileMap"]
@@ -19,13 +20,13 @@ layer_0/tile_data = PackedInt32Array(-2359247, 6, 0, -2359246, 3, 0, -2359245, 5
 [node name="Borders" parent="." instance=ExtResource("2")]
 
 [node name="JumpPlattform" parent="." instance=ExtResource("5")]
-position = Vector2(126.667, 9)
+position = Vector2(126.667, 25)
 
 [node name="JumpPlattform2" parent="." instance=ExtResource("5")]
-position = Vector2(288, -159)
+position = Vector2(288, -143)
 
 [node name="JumpPlattform3" parent="." instance=ExtResource("5")]
-position = Vector2(600, -135)
+position = Vector2(600, -119)
 
 [node name="Portal" parent="." instance=ExtResource("6")]
 position = Vector2(416, -223)
@@ -34,19 +35,23 @@ NextScene = ExtResource("8")
 [node name="EasterText" type="RichTextLabel" parent="."]
 offset_left = 543.0
 offset_top = -261.0
-offset_right = 634.0
-offset_bottom = -119.0
+offset_right = 636.0
+offset_bottom = -133.0
+theme_override_fonts/normal_font = ExtResource("7_7cvnd")
+theme_override_font_sizes/normal_font_size = 7
 text = "???????
-      |
-     \\/
+        |
+       \\/
+ 
+ 
+ 
+ 
+ 
+ 
 
-
-
-
-
-
-
-
+ 
+ 
+ 
 This is a secret :)"
 
 [node name="Player" parent="." instance=ExtResource("4")]

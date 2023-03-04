@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2q17umom1x3k"]
+[gd_scene load_steps=11 format=3 uid="uid://d2q17umom1x3k"]
 
 [ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Borders.tscn" id="2"]
@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://c8eoeju8hoaua" path="res://MovingPlattform/MovingPlattform.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://ct0spru8yxrym" path="res://Player/Player.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bcmgfnx6u47sk" path="res://JumpPlattform/JumpPlattform.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://Enemies/Slime/Slime.tscn" id="8"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="7_hf5eo"]
+[ext_resource type="PackedScene" uid="uid://csls6t3rsm324" path="res://Enemies/Slime/Slime.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://bsprmlvm1l1e5" path="res://Portal/Portal.tscn" id="9"]
-[ext_resource type="PackedScene" path="res://World/Level/Level10/Level10.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://bqhojd22khehp" path="res://World/Level/Level10/Level10.tscn" id="10"]
 
 [node name="Level9" type="TileMap"]
 position = Vector2(-1, 0)
@@ -35,19 +36,19 @@ position = Vector2(2180, -100.333)
 position = Vector2(-979.333, -208)
 
 [node name="JumpPlattform" parent="." instance=ExtResource("6")]
-position = Vector2(-496, 81)
+position = Vector2(-496, 96.9999)
 
 [node name="JumpPlattform2" parent="." instance=ExtResource("6")]
-position = Vector2(-800, -87)
+position = Vector2(-800, -71)
 
 [node name="JumpPlattform3" parent="." instance=ExtResource("6")]
-position = Vector2(944, 97)
+position = Vector2(944, 113)
 
 [node name="JumpPlattform4" parent="." instance=ExtResource("6")]
-position = Vector2(1766.67, -167)
+position = Vector2(1766.67, -151)
 
 [node name="JumpPlattform5" parent="." instance=ExtResource("6")]
-position = Vector2(2048, -55)
+position = Vector2(2048, -39.0001)
 
 [node name="Slime" parent="." instance=ExtResource("8")]
 position = Vector2(742, 90)
@@ -69,16 +70,20 @@ offset_left = -2366.33
 offset_top = 17.0
 offset_right = -2171.33
 offset_bottom = 139.0
+theme_override_fonts/normal_font = ExtResource("7_hf5eo")
+theme_override_font_sizes/normal_font_size = 7
 text = "Here is nothing
 TRY AGAIN!!!
  		|
-		\\/"
+	   \\/"
 
 [node name="Distract" type="RichTextLabel" parent="."]
 offset_left = -2018.0
 offset_top = -46.0
 offset_right = -1856.0
 offset_bottom = 12.0
+theme_override_fonts/normal_font = ExtResource("7_hf5eo")
+theme_override_font_sizes/normal_font_size = 7
 text = "huh?!?
 Thy GOT DISTRACTED
 RESET AND TRY AGAIN
@@ -90,6 +95,8 @@ offset_left = 2176.33
 offset_top = -276.0
 offset_right = 2279.33
 offset_bottom = -263.0
+theme_override_fonts/normal_font = ExtResource("7_hf5eo")
+theme_override_font_sizes/normal_font_size = 7
 text = "IT is next..."
 
 [node name="Portal" parent="." instance=ExtResource("9")]
@@ -103,6 +110,8 @@ offset_left = 684.0
 offset_top = -272.0
 offset_right = 842.0
 offset_bottom = -259.0
+theme_override_fonts/normal_font = ExtResource("7_hf5eo")
+theme_override_font_sizes/normal_font_size = 7
 text = "THY or IT will end soon"
 
 [connection signal="player_jump" from="JumpPlattform" to="Player" method="player_jump"]

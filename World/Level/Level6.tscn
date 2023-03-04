@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci5u35t8enmvc"]
+[gd_scene load_steps=10 format=3 uid="uid://ci5u35t8enmvc"]
 
-[ext_resource type="TileSet" path="res://World/Terrain/Tileset.tres" id="1"]
+[ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="1"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://Player/Player.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://Enemies/Slime/Slime.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://JumpPlattform/JumpPlattform.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://ct0spru8yxrym" path="res://Player/Player.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://csls6t3rsm324" path="res://Enemies/Slime/Slime.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bcmgfnx6u47sk" path="res://JumpPlattform/JumpPlattform.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Borders.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://Portal/Portal.tscn" id="8"]
-[ext_resource type="PackedScene" path="res://World/Level/Level7.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://bsprmlvm1l1e5" path="res://Portal/Portal.tscn" id="8"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="8_g7r2n"]
+[ext_resource type="PackedScene" uid="uid://drydu7m67jwjt" path="res://World/Level/Level7.tscn" id="9"]
 
 [node name="Level6" type="TileMap"]
 scale = Vector2(3, 3)
@@ -21,10 +22,10 @@ position = Vector2(143.667, -45.6667)
 [node name="Borders" parent="." instance=ExtResource("6")]
 
 [node name="JumpPlattform" parent="." instance=ExtResource("5")]
-position = Vector2(106.667, -15.3333)
+position = Vector2(106.667, 0.666626)
 
 [node name="JumpPlattform2" parent="." instance=ExtResource("5")]
-position = Vector2(397.667, -319)
+position = Vector2(397.667, -303)
 
 [node name="Slime2" parent="." instance=ExtResource("4")]
 position = Vector2(636.333, -382)
@@ -41,13 +42,17 @@ offset_left = 404.667
 offset_top = -356.0
 offset_right = 444.667
 offset_bottom = -316.0
+theme_override_fonts/normal_font = ExtResource("8_g7r2n")
+theme_override_font_sizes/normal_font_size = 7
 text = "->"
 
 [node name="Secret" type="RichTextLabel" parent="."]
-offset_left = 509.333
-offset_top = -220.333
-offset_right = 549.333
-offset_bottom = -180.333
+offset_left = 514.0
+offset_top = -233.0
+offset_right = 612.0
+offset_bottom = -193.0
+theme_override_fonts/normal_font = ExtResource("8_g7r2n")
+theme_override_font_sizes/normal_font_size = 7
 text = "?????"
 
 [node name="Story1" type="RichTextLabel" parent="."]
@@ -55,13 +60,17 @@ offset_left = 297.0
 offset_top = 72.0
 offset_right = 455.0
 offset_bottom = 91.0
-text = "Here is nothing...only Darkness"
+theme_override_fonts/normal_font = ExtResource("8_g7r2n")
+theme_override_font_sizes/normal_font_size = 7
+text = "Here  is  nothing...only Darkness"
 
 [node name="Forget?" type="RichTextLabel" parent="."]
 offset_left = 733.0
 offset_top = -405.0
 offset_right = 884.0
 offset_bottom = -368.0
+theme_override_fonts/normal_font = ExtResource("8_g7r2n")
+theme_override_font_sizes/normal_font_size = 7
 text = "Forgot something?"
 
 [node name="Player" parent="." instance=ExtResource("3")]

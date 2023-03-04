@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=72 format=3 uid="uid://dmwva45vx8phu"]
+[gd_resource type="TileSet" load_steps=73 format=3 uid="uid://dmwva45vx8phu"]
 
 [ext_resource type="Texture2D" uid="uid://bxy8jtx6r4af1" path="res://World/Terrain/Tileset 5.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://03gqn75pc0ol" path="res://World/Terrain/Tileset 6.png" id="2"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://xdqroils61tj" path="res://World/Terrain/Tileset 2.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://ds6836trb7awm" path="res://World/Terrain/Tileset 5Slide.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://selpwoy4mnkp" path="res://World/Terrain/Tileset.png" id="7"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_shtom"]
+tile_data = PackedInt32Array(0, 4, 0, 65536, 5, 262144, 131072, 4, 393216, 1, 3, 0, 65537, 2, 262144, 131073, 0, 131072, 196609, 4, 393216, 2, 3, 0, 65538, 0, 327680, 131074, 1, 65536, 196610, 5, 196608, 3, 5, 0, 65539, 2, 393216, 131075, 0, 0, 196611, 5, 131072, 4, 3, 0, 65540, 1, 131072, 131076, 0, 131072, 196612, 3, 131072, 5, 5, 0, 65541, 2, 458752, 131077, 2, 327680, 196613, 4, 458752, 6, 4, 327680, 65542, 5, 327680, 131078, 4, 458752)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f06lq"]
 
@@ -590,3 +593,4 @@ sources/3 = SubResource("TileSetAtlasSource_dunl5")
 sources/4 = SubResource("TileSetAtlasSource_iv64q")
 sources/5 = SubResource("TileSetAtlasSource_nhhg8")
 sources/6 = SubResource("TileSetAtlasSource_oww8j")
+pattern_0 = SubResource("TileMapPattern_shtom")

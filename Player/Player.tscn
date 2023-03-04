@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ct0spru8yxrym"]
+[gd_scene load_steps=13 format=3 uid="uid://ct0spru8yxrym"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1"]
 [ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="5_78lhg"]
 [ext_resource type="Texture2D" uid="uid://xdhedbvq4fc3" path="res://World/Terrain/background.png" id="6"]
 [ext_resource type="Script" path="res://Player/Animation.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://8q1ncf4m00i8" path="res://Player/SlidePartGradient.tres" id="7_hf0vw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gx4w"]
 radius = 7.0
@@ -83,6 +84,7 @@ shape = SubResource("RectangleShape2D_2btgx")
 position = Vector2(7.5, -5)
 emitting = false
 process_material = ExtResource("4")
+texture = ExtResource("7_hf0vw")
 preprocess = 1.0
 randomness = 1.0
 
@@ -90,6 +92,7 @@ randomness = 1.0
 position = Vector2(7.5, -1)
 emitting = false
 process_material = ExtResource("4")
+texture = ExtResource("7_hf0vw")
 preprocess = 1.0
 randomness = 1.0
 
@@ -105,6 +108,7 @@ shape = SubResource("RectangleShape2D_1txel")
 position = Vector2(-7.5, -5)
 emitting = false
 process_material = ExtResource("4")
+texture = ExtResource("7_hf0vw")
 preprocess = 1.0
 randomness = 1.0
 
@@ -112,6 +116,7 @@ randomness = 1.0
 position = Vector2(-7.5, -1)
 emitting = false
 process_material = ExtResource("4")
+texture = ExtResource("7_hf0vw")
 preprocess = 1.0
 randomness = 1.0
 
