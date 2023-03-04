@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bqhojd22khehp"]
+[gd_scene load_steps=15 format=3 uid="uid://bqhojd22khehp"]
 
 [ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://ct0spru8yxrym" path="res://Player/Player.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://c0um0smge7r6p" path="res://Player/CatSpriteSheet.png" id="3"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="5"]
 [ext_resource type="Script" path="res://World/Level/Level10/BordersTP.gd" id="6"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="6_llp6p"]
 [ext_resource type="PackedScene" uid="uid://x857qw1vgq3c" path="res://World/Level/Level10/Level10.1.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://bsprmlvm1l1e5" path="res://Portal/Portal.tscn" id="9"]
 
@@ -75,6 +76,8 @@ offset_left = 123.0
 offset_top = -11.6667
 offset_right = 142.0
 offset_bottom = -0.666667
+theme_override_fonts/normal_font = ExtResource("6_llp6p")
+theme_override_font_sizes/normal_font_size = 7
 text = "->"
 
 [node name="Player" parent="." instance=ExtResource("2")]

@@ -22,3 +22,7 @@ res://JumpPlattform/JumpPlattform.tscn
 res://World/Level/Start.tscn
 res://World/Level/Start.gd
 res://World/Level/End.tscn
+res://World/Level/Level10/Level10.tscn
+res://World/Level/Level10/MessagePortal1.tscn
+res://World/Level/Level10/MessagePortal3.tscn
+res://World/Level/Level10/Level10.1.tscn
