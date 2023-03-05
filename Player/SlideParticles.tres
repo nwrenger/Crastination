@@ -8,12 +8,11 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.196078)
 gradient = SubResource("49")
 
 [resource]
-emission_shape = 2
-emission_sphere_radius = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.5
 particle_flag_disable_z = true
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-scale_min = 3.0
 scale_max = 3.0
 color = Color(1, 1, 1, 0.196078)
 color_ramp = SubResource("50")
