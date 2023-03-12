@@ -1,7 +1,0 @@
-res://default_env.tres
-res://Player/Player.tscn
-res://Player/PlayerSprites.tres
-res://World/Terrain/Tileset.tres
-res://Player/SlideParticles.tres
-res://Player/SlidePartGradient.tres
-res://World/Title.tscn
