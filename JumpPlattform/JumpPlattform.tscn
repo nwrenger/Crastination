@@ -42,6 +42,7 @@ position = Vector2(0, -1)
 shape = SubResource("8")
 
 [node name="Light" type="PointLight2D" parent="."]
+texture_filter = 2
 position = Vector2(0, -2)
 color = Color(0, 1, 0, 1)
 shadow_enabled = true

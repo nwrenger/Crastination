@@ -41,6 +41,7 @@ _data = {
 }
 
 [node name="MessagePortal" type="Node2D"]
+texture_filter = 2
 script = ExtResource("3")
 NextScene = ExtResource("6")
 

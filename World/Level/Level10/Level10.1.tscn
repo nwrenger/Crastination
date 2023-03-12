@@ -80,6 +80,7 @@ autoplay = "default"
 frame = 1
 
 [node name="NoShadow" type="PointLight2D" parent="DarkCat"]
+texture_filter = 2
 position = Vector2(0, 7)
 energy = 0.75
 blend_mode = 1
@@ -89,6 +90,7 @@ texture_scale = 0.8
 [node name="Shadow" type="PointLight2D" parent="DarkCat"]
 light_mask = 3
 visibility_layer = 3
+texture_filter = 2
 position = Vector2(0, 7)
 blend_mode = 1
 shadow_enabled = true

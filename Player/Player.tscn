@@ -47,6 +47,7 @@ autoplay = "readyfalling"
 script = ExtResource("7")
 
 [node name="NoShadow" type="PointLight2D" parent="CatSprite"]
+texture_filter = 2
 position = Vector2(0, 7)
 energy = 0.75
 texture = ExtResource("5_ovvjo")
@@ -55,6 +56,7 @@ texture_scale = 0.6
 [node name="Shadow" type="PointLight2D" parent="CatSprite"]
 light_mask = 3
 visibility_layer = 3
+texture_filter = 2
 position = Vector2(0, 7)
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
