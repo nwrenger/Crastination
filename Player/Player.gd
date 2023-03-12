@@ -38,7 +38,7 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	
+
 	if $WallLeft.get_overlapping_bodies():
 		wall_left = true
 	else:
@@ -47,13 +47,13 @@ func _physics_process(delta):
 		wall_right = true
 	else:
 		wall_right = false
-	
+
 	if wall_right or wall_left:
 		notwall = false
 	else:
 		notwall = true
-	
-	
+
+
 	$WallLeft/SlideParticles.emitting = wall_left
 	$WallRight/SlideParticles.emitting = wall_right
 	$WallLeft/SlideParticles2.emitting = wall_left

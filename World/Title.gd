@@ -20,7 +20,7 @@ func _ready():
 
 func toggle():
 	$AnimationFade.play("FadeOut")
-	
+
 	await $AnimationFade.animation_finished
 	# warning-ignore:return_value_discarded
 
