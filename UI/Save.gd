@@ -9,17 +9,18 @@ var time := 0.0
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	#todo load
-	var f := FileAccess.open(file, FileAccess.READ)
-	var test_json_conv = JSON.new()
-	test_json_conv.parse(f.get_as_text(), true)
-	var save = test_json_conv.get_data()
-	if save is Dictionary:
-#		print(save)
-		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (save.get("fullscreen", ((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN)))) else Window.MODE_WINDOWED
-		volume = save.get("volume", volume)
-		level = save.get("level", level)
-		zoom = save.get("zoom", zoom)
-		time = save.get("time", time)
+	var f := FileAccess.open(file,FileAccess.READ)
+	if FileAccess.file_exists(file):
+		var test_json_conv = JSON.new()
+		test_json_conv.parse(f.get_as_text(), true)
+		var save = test_json_conv.get_data()
+		if save is Dictionary:
+#			print(save)
+			get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (save.get("fullscreen", ((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN)))) else Window.MODE_WINDOWED
+			volume = save.get("volume", volume)
+			level = save.get("level", level)
+			zoom = save.get("zoom", zoom)
+			time = save.get("time", time)
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
