@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ct0spru8yxrym"]
+[gd_scene load_steps=14 format=3 uid="uid://ct0spru8yxrym"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1"]
 [ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://0jweq12vjyw8" path="res://Player/SlideParticles.tres" id="4"]
 [ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="5_ovvjo"]
 [ext_resource type="Texture2D" uid="uid://xdhedbvq4fc3" path="res://World/Terrain/background.png" id="6"]
+[ext_resource type="Script" path="res://Player/Camera.gd" id="6_0grdk"]
 [ext_resource type="Script" path="res://Player/Animation.gd" id="7"]
 [ext_resource type="Texture2D" uid="uid://8q1ncf4m00i8" path="res://Player/SlidePartGradient.tres" id="7_hf0vw"]
 
@@ -71,8 +72,10 @@ rotation = 1.5708
 shape = SubResource("CircleShape2D_6gx4w")
 
 [node name="Camera" type="Camera2D" parent="."]
+process_mode = 3
 zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
+script = ExtResource("6_0grdk")
 
 [node name="WallRight" type="Area2D" parent="."]
 collision_layer = 2

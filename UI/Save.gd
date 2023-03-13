@@ -3,6 +3,7 @@ extends Node
 var file := "user://save.json"
 var volume := 1.0
 var level := 0
+var zoom := 1.5
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
@@ -16,6 +17,7 @@ func _ready():
 		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (save.get("fullscreen", ((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN)))) else Window.MODE_WINDOWED
 		volume = save.get("volume", volume)
 		level = save.get("level", level)
+		zoom = save.get("zoom", zoom)
 
 
 func _notification(what):
@@ -29,6 +31,7 @@ func _notification(what):
 			"fullscreen": ((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN)),
 			"volume": volume,
 			"level": level,
+			"zoom": zoom,
 		}
 		f.store_string(JSON.stringify(save))
 		get_tree().quit()

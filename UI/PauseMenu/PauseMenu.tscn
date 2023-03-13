@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn47eubrdwcgl"]
+[gd_scene load_steps=8 format=3 uid="uid://0tg2d6uiwxyf"]
 
 [ext_resource type="Script" path="res://UI/PauseMenu/PauseMenu.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bku0f3at4d2mb" path="res://UI/Music/MusicStopButton.tscn" id="3"]
 [ext_resource type="FontFile" path="res://Fonts/Text.tres" id="3_mv706"]
 [ext_resource type="PackedScene" uid="uid://dstdl7y5x6vik" path="res://UI/Fullscreen/FullscreenButton.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://qvl2tdqeevub" path="res://UI/Zoom/Zoom.tscn" id="5_pfxi4"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_q0ayr"]
 action = &"ui_pause"
@@ -53,5 +54,10 @@ text = "Resume"
 
 [node name="Mute" parent="." instance=ExtResource("3")]
 layout_mode = 1
+
+[node name="Zoom" parent="." instance=ExtResource("5_pfxi4")]
+layout_mode = 1
+offset_top = 33.0
+offset_bottom = 49.0
 
 [connection signal="pressed" from="Button" to="." method="toggle"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://qvl2tdqeevub"]
+
+[ext_resource type="Script" path="res://UI/Zoom/Zoom.gd" id="1_7v4j2"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="2_3bebw"]
+
+[node name="Zoom" type="HSlider"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.5
+offset_top = 36.0
+offset_right = 68.5
+offset_bottom = 52.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+min_value = 1.0
+max_value = 3.0
+step = 0.01
+value = 1.0
+script = ExtResource("1_7v4j2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = -28.0
+offset_right = 55.0
+offset_bottom = 5.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_3bebw")
+theme_override_font_sizes/normal_font_size = 21
+text = "ZOOM:"
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]
