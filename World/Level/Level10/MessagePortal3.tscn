@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bws3puyqbcbuu"]
 
-[ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://b1dniodjt75fr" path="res://World/Terrain/Background.tscn" id="2"]
 [ext_resource type="Script" path="res://World/Level/Level10/MessagePortal.gd" id="3"]
 [ext_resource type="FontFile" path="res://Fonts/Text.tres" id="4_04bkn"]
 [ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="4_rinjx"]
-[ext_resource type="PackedScene" uid="uid://dn47eubrdwcgl" path="res://UI/PauseMenu/PauseMenu.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://0tg2d6uiwxyf" path="res://UI/PauseMenu/PauseMenu.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bfblk6ugj6f1y" path="res://World/Level/Level10/Level10.4.tscn" id="6"]
 
 [sub_resource type="Animation" id="1"]
@@ -84,6 +84,5 @@ offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5")]
-process_mode = 2
 
 [connection signal="animation_finished" from="AnimationFade" to="." method="_on_Animation_animation_finished"]
