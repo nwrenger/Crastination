@@ -14,6 +14,7 @@ config/name="Crastination"
 run/main_scene="res://World/Title.tscn"
 config/features=PackedStringArray("4.0")
 boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/use_filter=false
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon.png"
 config/windows_native_icon="res://icon.png"

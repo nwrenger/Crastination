@@ -13,6 +13,7 @@ extends CanvasLayer
 @export var Level10: PackedScene
 
 func _ready():
+	Engine.max_fps = 60
 	$AnimationFade.play("FadeIn")
 	if get_node("/root/Save").level > 0:
 		$CurrentLevel.show()
