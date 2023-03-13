@@ -39,7 +39,7 @@ func _pressed():
 			_slider.value = last_state
 	else:
 		last_state = _slider.value
-		print(last_state)
+#		print(last_state)
 		_slider.value = 0
 		set_state(State.MUTED)
 
