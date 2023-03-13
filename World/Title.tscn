@@ -1,12 +1,12 @@
 [gd_scene load_steps=32 format=3 uid="uid://djljxmuirevbj"]
 
+[ext_resource type="Texture2D" uid="uid://xdhedbvq4fc3" path="res://World/Terrain/background.png" id="1_pp4xe"]
 [ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="2_m74x0"]
 [ext_resource type="Script" path="res://World/Title.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="3_ulocx"]
 [ext_resource type="PackedScene" uid="uid://cgrs1mfj4e2jd" path="res://World/Level/Level1.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://rpwxhbcs7gbf" path="res://World/Light/light.png" id="4_2psgt"]
 [ext_resource type="PackedScene" uid="uid://bku0f3at4d2mb" path="res://UI/Music/MusicStopButton.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://bacx1pf3uyllq" path="res://UI/Itch.ioButton/ItchioButton.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://dstdl7y5x6vik" path="res://UI/Fullscreen/FullscreenButton.tscn" id="10"]
 [ext_resource type="PackedScene" uid="uid://nuink81gy7tc" path="res://World/Level/Level2.tscn" id="11"]
@@ -108,8 +108,10 @@ _data = {
 
 [node name="Title" type="Node2D"]
 
-[node name="Background" parent="." instance=ExtResource("7")]
-position = Vector2(0, 1)
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.101961, 0.101961, 0.101961, 1)
+scale = Vector2(100, 100)
+texture = ExtResource("1_pp4xe")
 
 [node name="CatSprite" type="AnimatedSprite2D" parent="."]
 light_mask = 2
