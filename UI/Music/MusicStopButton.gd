@@ -33,12 +33,12 @@ func save():
 
 func _pressed():
 	if state == State.MUTED:
-		_slider.value = last_state
-	else:
-		if _slider.value == 0.0:
-			last_state = 1.0
+		if last_state == 0:
+			_slider.value = 1
 		else:
-			last_state = _slider.value
+			_slider.value = last_state
+	else:
+		last_state = _slider.value
 		print(last_state)
 		_slider.value = 0
 		set_state(State.MUTED)
