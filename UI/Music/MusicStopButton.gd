@@ -17,6 +17,7 @@ enum State{
 }
 
 var state :int = State.LOUD : set = set_state
+var last_state: float
 
 
 func _ready():
@@ -32,9 +33,13 @@ func save():
 
 func _pressed():
 	if state == State.MUTED:
-		_slider.value = 1
-		set_state(State.LOUD)
+		_slider.value = last_state
 	else:
+		if _slider.value == 0.0:
+			last_state = 1.0
+		else:
+			last_state = _slider.value
+		print(last_state)
 		_slider.value = 0
 		set_state(State.MUTED)
 
