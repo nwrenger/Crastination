@@ -4,6 +4,7 @@ var file := "user://save.json"
 var volume := 1.0
 var level := 0
 var zoom := 1.5
+var time := 0.0
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
@@ -18,7 +19,7 @@ func _ready():
 		volume = save.get("volume", volume)
 		level = save.get("level", level)
 		zoom = save.get("zoom", zoom)
-
+		time = save.get("time", time)
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -32,6 +33,7 @@ func _notification(what):
 			"volume": volume,
 			"level": level,
 			"zoom": zoom,
+			"time": time,
 		}
 		f.store_string(JSON.stringify(save))
 		get_tree().quit()

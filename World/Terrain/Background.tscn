@@ -1,6 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1dniodjt75fr"]
+[gd_scene load_steps=6 format=3 uid="uid://b1dniodjt75fr"]
 
 [ext_resource type="Texture2D" uid="uid://xdhedbvq4fc3" path="res://World/Terrain/background.png" id="1"]
+[ext_resource type="Script" path="res://World/Terrain/BgAnimation.gd" id="2_isdd7"]
+
+[sub_resource type="Animation" id="Animation_7vgp5"]
+resource_name = "sun"
+length = 600.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 480),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.5708, 1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sun:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 470, 480),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.2, 0.2, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_64gnf"]
+_data = {
+"sun": SubResource("Animation_7vgp5")
+}
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xdke4"]
+polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
 [node name="Background" type="Sprite2D"]
 modulate = Color(0.101961, 0.101961, 0.101961, 1)
@@ -8,10 +46,25 @@ show_behind_parent = true
 scale = Vector2(100, 100)
 texture = ExtResource("1")
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="Sun" type="DirectionalLight2D" parent="."]
 texture_filter = 2
-rotation = -0.785398
-energy = 0.2
+rotation = -1.5708
+energy = 0.0
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.784314)
 shadow_filter = 2
+
+[node name="Animation" type="AnimationPlayer" parent="." groups=["Save"]]
+autoplay = "sun"
+libraries = {
+"": SubResource("AnimationLibrary_64gnf")
+}
+script = ExtResource("2_isdd7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+texture = ExtResource("1")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_xdke4")
