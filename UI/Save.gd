@@ -28,6 +28,7 @@ func _notification(what):
 #		print("saving")
 		for node in get_tree().get_nodes_in_group("Save"):
 			node.save()
+#			print("save_group")
 		var f := FileAccess.open(file, FileAccess.WRITE)
 		var save = {
 			"fullscreen": ((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN)),

@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://ct0spru8yxrym" path="res://Player/Player.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://c0um0smge7r6p" path="res://Player/CatSpriteSheet.png" id="3"]
-[ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://b1dniodjt75fr" path="res://World/Terrain/Background.tscn" id="5"]
 [ext_resource type="Script" path="res://World/Level/Level10/BordersTP.gd" id="6"]
 [ext_resource type="FontFile" path="res://Fonts/Text.tres" id="6_llp6p"]
 [ext_resource type="PackedScene" uid="uid://x857qw1vgq3c" path="res://World/Level/Level10/Level10.1.tscn" id="7"]
