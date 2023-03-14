@@ -51,7 +51,7 @@ _data = {
 "main": SubResource("1")
 }
 
-[node name="End" type="Node2D"]
+[node name="End" type="Node2D" groups=["Save"]]
 script = ExtResource("3")
 
 [node name="Background" parent="." instance=ExtResource("2")]

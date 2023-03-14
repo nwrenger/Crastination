@@ -54,4 +54,3 @@ func toggle():
 func ClearData_pressed():
 	$CurrentLevel.hide()
 	get_node("/root/Save").level = 0
-	get_node("/root/Save").time = 0.0

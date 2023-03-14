@@ -100,7 +100,7 @@ _data = {
 "main": SubResource("6")
 }
 
-[node name="Start" type="Node2D"]
+[node name="Start" type="Node2D" groups=["Save"]]
 script = ExtResource("6")
 
 [node name="TileMap" type="TileMap" parent="."]
