@@ -54,7 +54,7 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.784314)
 shadow_filter = 2
 
-[node name="Animation" type="AnimationPlayer" parent="." groups=["Save"]]
+[node name="Animation" type="AnimationPlayer" parent="."]
 autoplay = "sun"
 libraries = {
 "": SubResource("AnimationLibrary_64gnf")
