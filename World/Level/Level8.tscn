@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://World/Terrain/Borders.tscn" id="1"]
 [ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="2"]
 [ext_resource type="PackedScene" uid="uid://ct0spru8yxrym" path="res://Player/Player.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b1dniodjt75fr" path="res://World/Terrain/Background.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://c8eoeju8hoaua" path="res://MovingPlattform/MovingPlattform.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bcmgfnx6u47sk" path="res://JumpPlattform/JumpPlattform.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://csls6t3rsm324" path="res://Enemies/Slime/Slime.tscn" id="7"]

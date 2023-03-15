@@ -11,6 +11,7 @@ extends CanvasLayer
 @export var Level8: PackedScene
 @export var Level9: PackedScene
 @export var Level10: PackedScene
+@export var Level11: PackedScene
 
 func _ready():
 	Engine.max_fps = 60
@@ -49,7 +50,9 @@ func toggle():
 		get_tree().change_scene_to_packed(Level9)
 	elif 10 == get_node("/root/Save").level:
 		get_tree().change_scene_to_packed(Level10)
-
+	elif 11 == get_node("/root/Save").level:
+		#bugged title screen
+		get_tree().change_scene_to_packed(Level11)
 
 func ClearData_pressed():
 	$CurrentLevel.hide()

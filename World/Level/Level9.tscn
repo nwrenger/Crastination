@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://d2q17umom1x3k"]
 
-[ext_resource type="PackedScene" path="res://World/Terrain/Background.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://b1dniodjt75fr" path="res://World/Terrain/Background.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Borders.tscn" id="2"]
 [ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="3"]
 [ext_resource type="PackedScene" uid="uid://c8eoeju8hoaua" path="res://MovingPlattform/MovingPlattform.tscn" id="4"]

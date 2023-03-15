@@ -11,6 +11,16 @@ extends CharacterBody2D
 var jump_timer := 0.0
 var notwall := false
 
+var dash_left := false
+var dash_right := false
+var dash_speed := 900
+var dash_total := 0.2
+var dash_timer := 0.0
+var double_press_total := 0.2
+var double_press_timer_left := 0.0
+var double_press_timer_right := 0.0
+var cool_down := 0.0
+
 var wall_right := false
 var wall_left := false
 var wall_fall_speed := 120
@@ -37,6 +47,52 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 
+#dash
+	if get_node("/root/Save").dash:
+		if Input.is_action_just_released("ui_right"):
+			double_press_timer_right = 0
+		else: 
+			double_press_timer_right += delta
+		if Input.is_action_just_pressed("ui_right") and double_press_timer_right < double_press_total and not Input.is_action_pressed("ui_left") and not Input.is_action_just_pressed("ui_left"):
+				dash_right = true
+	#			print("dash right")
+		if Input.is_action_just_released("ui_left"):
+			double_press_timer_left = 0
+		else: 
+			double_press_timer_left += delta
+		if Input.is_action_just_pressed("ui_left") and double_press_timer_left < double_press_total and not Input.is_action_pressed("ui_right") and not Input.is_action_just_pressed("ui_right"):
+				dash_left = true
+	#			print("dash left")
+		if notwall and cool_down <= 0:
+			if dash_right:
+				dash_timer += delta
+				if dash_timer < dash_total:
+					$dash_mist.emitting = true
+					velocity.x = dash_speed
+				else:
+					dash_right = false
+					$dash_mist.emitting = false
+					cool_down = 0.5
+			elif dash_left:
+				dash_timer += delta
+				if dash_timer < dash_total:
+					$dash_mist.emitting = true
+					velocity.x = -dash_speed
+				else:
+					$dash_mist.emitting = false
+					dash_left = false
+					cool_down = 0.5
+			else:
+				dash_timer = 0
+		else:
+			dash_right = false
+			dash_left = false
+			cool_down -= delta
+	
+#	print(double_press_timer)
+
+
+#wall_jump
 	if $WallLeft.get_overlapping_bodies():
 		wall_left = true
 	else:
@@ -55,7 +111,7 @@ func _physics_process(delta):
 	$WallLeft/SlideParticles2.emitting = wall_left
 	$WallRight/SlideParticles2.emitting = wall_right
 
-	if wall_left == false and wall_right == false:
+	if wall_left == false and wall_right == false and dash_left == false and dash_right == false:
 		if not velocity.y >= fall_speed_limit or is_on_floor():
 			velocity.y += gravity * delta
 	else:
@@ -82,7 +138,9 @@ func _physics_process(delta):
 				wall_fall_speed_final = wall_fall_speed
 			velocity.y = wall_fall_speed_final
 
+#velocity
 	move_and_slide()
+#frame_anim
 	emit_signal("move", velocity, wall_right, wall_left, on_ground)
 
 	if is_on_floor() and not on_ground:
@@ -91,6 +149,7 @@ func _physics_process(delta):
 	$WallLeft/Collision.disabled = is_on_floor()
 	$WallRight/Collision.disabled = is_on_floor()
 
+#jump
 	if is_on_floor():
 		jump_timer = 0.0
 	else:
@@ -101,6 +160,8 @@ func _physics_process(delta):
 		wall_right = false
 		velocity.y = jump_height
 		on_ground = false
+		
+		
 
 
 func player_killed_slime():

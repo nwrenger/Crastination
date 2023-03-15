@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ct0spru8yxrym"]
+[gd_scene load_steps=22 format=3 uid="uid://ct0spru8yxrym"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1"]
 [ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="2"]
@@ -18,6 +18,30 @@ size = Vector2(0.6, 2.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1txel"]
 size = Vector2(0.6, 2.75)
+
+[sub_resource type="Gradient" id="49"]
+offsets = PackedFloat32Array(0.430464, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.196078)
+
+[sub_resource type="GradientTexture2D" id="50"]
+gradient = SubResource("49")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1sg0q"]
+emission_shape = 1
+emission_sphere_radius = 8.58
+particle_flag_disable_z = true
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 3.0
+color = Color(1, 1, 1, 0.196078)
+color_ramp = SubResource("50")
+
+[sub_resource type="Gradient" id="Gradient_wxi0c"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ag7i6"]
+gradient = SubResource("Gradient_wxi0c")
+width = 1
 
 [sub_resource type="Environment" id="48"]
 background_mode = 4
@@ -160,6 +184,16 @@ position = Vector2(-7.5, -1)
 emitting = false
 process_material = ExtResource("4")
 texture = ExtResource("7_hf0vw")
+preprocess = 1.0
+randomness = 1.0
+
+[node name="dash_mist" type="GPUParticles2D" parent="."]
+position = Vector2(0, -3)
+emitting = false
+amount = 55
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_1sg0q")
+texture = SubResource("GradientTexture1D_ag7i6")
 preprocess = 1.0
 randomness = 1.0
 

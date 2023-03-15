@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var NextScene: PackedScene
-var TotalLevel := 11
+var TotalLevel := 12
 
 
 func Area_entered(_body):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://djljxmuirevbj"]
+[gd_scene load_steps=33 format=3 uid="uid://djljxmuirevbj"]
 
 [ext_resource type="Texture2D" uid="uid://xdhedbvq4fc3" path="res://World/Terrain/background.png" id="1_pp4xe"]
 [ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="2_m74x0"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" path="res://Fonts/Text.tres" id="15_5j26o"]
 [ext_resource type="PackedScene" uid="uid://bq0qbw1k1htd7" path="res://World/Level/Level8.tscn" id="16"]
 [ext_resource type="PackedScene" uid="uid://drydu7m67jwjt" path="res://World/Level/Level7.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://druhtoeqwgkkf" path="res://World/Level/Level11.tscn" id="17_mjjni"]
 [ext_resource type="PackedScene" uid="uid://dnxwy1ijemslv" path="res://World/Level/Start.tscn" id="19"]
 [ext_resource type="PackedScene" uid="uid://d2q17umom1x3k" path="res://World/Level/Level9.tscn" id="20"]
 [ext_resource type="PackedScene" uid="uid://bqhojd22khehp" path="res://World/Level/Level10/Level10.tscn" id="21"]
@@ -213,6 +214,7 @@ Level7 = ExtResource("17")
 Level8 = ExtResource("16")
 Level9 = ExtResource("20")
 Level10 = ExtResource("21")
+Level11 = ExtResource("17_mjjni")
 
 [node name="CurrentLevel" type="RichTextLabel" parent="Canvas"]
 visible = false

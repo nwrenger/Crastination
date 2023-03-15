@@ -5,3 +5,4 @@ func _on_Animation_animation_finished(_anim_name):
 
 func _enter_tree():
 	get_node("/root/Save").time = 0
+	get_node("/root/Save").dash = false
