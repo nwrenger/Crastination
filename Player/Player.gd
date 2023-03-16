@@ -19,6 +19,8 @@ var dash_timer := 0.0
 var double_press_total := 0.2
 var double_press_timer_left := 0.5
 var double_press_timer_right := 0.5
+var press_count_right = 0
+var press_count_left = 0
 var cool_down := 0.0
 
 var wall_right := false
@@ -49,18 +51,24 @@ func _physics_process(delta):
 
 #dash
 	if get_node("/root/Save").dash:
-		if Input.is_action_just_released("ui_right"):
+		if Input.is_action_just_pressed("ui_right"):
 			double_press_timer_right = 0
+			press_count_right = press_count_right + 1
 		else: 
 			double_press_timer_right += delta
-		if Input.is_action_just_pressed("ui_right") and double_press_timer_right < double_press_total and not Input.is_action_pressed("ui_left") and not Input.is_action_just_pressed("ui_left") and not dash_right:
+			if double_press_timer_right >= dash_total:
+				press_count_right = 0 
+		if not Input.is_action_pressed("ui_left") and not dash_right and press_count_right == 2:
 				dash_right = true
 #				print("dash right")
-		if Input.is_action_just_released("ui_left"):
+		if Input.is_action_just_pressed("ui_left"):
 			double_press_timer_left = 0
+			press_count_left = press_count_left + 1
 		else: 
 			double_press_timer_left += delta
-		if Input.is_action_just_pressed("ui_left") and double_press_timer_left < double_press_total and not Input.is_action_pressed("ui_right") and not Input.is_action_just_pressed("ui_right") and not dash_left:
+			if double_press_timer_left >= dash_total:
+				press_count_left = 0
+		if not Input.is_action_pressed("ui_right") and not dash_left and press_count_left == 2:
 				dash_left = true
 #				print("dash left")
 		if notwall and cool_down <= 0:
