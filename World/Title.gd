@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node
 
 @export var Start: PackedScene
 @export var Level1: PackedScene
@@ -15,15 +15,20 @@ extends CanvasLayer
 
 func _ready():
 	Engine.max_fps = 60
-	$AnimationFade.play("FadeIn")
+	$Canvas/AnimationFade.play("FadeIn")
 	if get_node("/root/Save").level > 0:
-		$CurrentLevel.show()
-		$CurrentLevel.text = "Current Level: " +  str(get_node("/root/Save").level)
-
+		$Canvas/CurrentLevel.show()
+		$Canvas/CurrentLevel.text = "Current Level: " +  str(get_node("/root/Save").level)
+	if get_node("/root/Save").level >= 11:
+		$Background.hide()
+		$BackgroundBugged.show()
+	else:
+		$Background.show()
+		$BackgroundBugged.hide()
 func toggle():
-	$AnimationFade.play("FadeOut")
+	$Canvas/AnimationFade.play("FadeOut")
 
-	await $AnimationFade.animation_finished
+	await $Canvas/AnimationFade.animation_finished
 	# warning-ignore:return_value_discarded
 
 		#todo for loop
@@ -55,5 +60,7 @@ func toggle():
 		get_tree().change_scene_to_packed(Level11)
 
 func ClearData_pressed():
-	$CurrentLevel.hide()
+	$Canvas/CurrentLevel.hide()
 	get_node("/root/Save").level = 0
+	$Background.show()
+	$BackgroundBugged.hide()
