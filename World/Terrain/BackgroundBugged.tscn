@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1dniodjt75fr"]
+[gd_scene load_steps=7 format=3 uid="uid://be5sam8351iyv"]
 
-[ext_resource type="Texture2D" uid="uid://cuswq8nnojc5y" path="res://World/Terrain/Background.png" id="1_wecac"]
-[ext_resource type="Script" path="res://World/Terrain/BgAnimation.gd" id="2_isdd7"]
+[ext_resource type="Texture2D" uid="uid://ccpb7v2cr2hny" path="res://World/Terrain/BackgroundBugged.png" id="1_aevkw"]
+[ext_resource type="Script" path="res://World/Terrain/BgAnimation.gd" id="2_e5omr"]
 
 [sub_resource type="Animation" id="Animation_7vgp5"]
 resource_name = "sun"
@@ -42,10 +42,11 @@ _data = {
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xdke4"]
 polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
-[node name="Background" type="Sprite2D"]
+[node name="BackgroundBugged" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.588235)
 show_behind_parent = true
 scale = Vector2(50, 50)
-texture = ExtResource("1_wecac")
+texture = ExtResource("1_aevkw")
 
 [node name="Sun" type="DirectionalLight2D" parent="."]
 texture_filter = 2
@@ -60,7 +61,7 @@ autoplay = "sun"
 libraries = {
 "": SubResource("AnimationLibrary_64gnf")
 }
-script = ExtResource("2_isdd7")
+script = ExtResource("2_e5omr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

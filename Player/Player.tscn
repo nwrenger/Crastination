@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1"]
 [ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://cuswq8nnojc5y" path="res://World/Terrain/Background.png" id="2_pxiur"]
 [ext_resource type="PackedScene" uid="uid://0tg2d6uiwxyf" path="res://UI/PauseMenu/PauseMenu.tscn" id="3"]
 [ext_resource type="Material" uid="uid://0jweq12vjyw8" path="res://Player/SlideParticles.tres" id="4"]
 [ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="5_ovvjo"]
-[ext_resource type="Texture2D" uid="uid://xdhedbvq4fc3" path="res://World/Terrain/background.png" id="6"]
 [ext_resource type="Script" path="res://Player/Camera.gd" id="6_0grdk"]
 [ext_resource type="Script" path="res://Player/Animation.gd" id="7"]
 [ext_resource type="Texture2D" uid="uid://8q1ncf4m00i8" path="res://Player/SlidePartGradient.tres" id="7_hf0vw"]
@@ -97,9 +97,8 @@ script = ExtResource("1")
 
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(0.101961, 0.101961, 0.101961, 1)
 position = Vector2(0, -5)
-texture = ExtResource("6")
+texture = ExtResource("2_pxiur")
 
 [node name="CatSprite" type="AnimatedSprite2D" parent="."]
 light_mask = 2
