@@ -88,7 +88,7 @@ func _physics_process(delta):
 			dash_right = false
 			dash_left = false
 			cool_down -= delta
-	
+			$dash_mist.emitting = false
 #	print(double_press_timer)
 
 
@@ -141,7 +141,7 @@ func _physics_process(delta):
 #velocity
 	move_and_slide()
 #frame_anim
-	emit_signal("move", velocity, wall_right, wall_left, on_ground)
+	emit_signal("move", velocity, wall_right, wall_left, on_ground, dash_right, dash_left)
 
 	if is_on_floor() and not on_ground:
 		on_ground = true

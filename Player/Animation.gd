@@ -7,7 +7,7 @@ func nplay(anim):
 	if anim != animation:
 		play(anim)
 
-func _on_Player_move(velocity, wall_right, wall_left, on_ground):
+func _on_Player_move(velocity, wall_right, wall_left, on_ground, dash_right, dash_left):
 	if wall_right:
 		if Input.is_action_pressed("ui_left"):
 			nplay("walllook")
@@ -20,11 +20,13 @@ func _on_Player_move(velocity, wall_right, wall_left, on_ground):
 		else:
 			nplay("wall")
 		flip_h = true
-	if Input.is_action_pressed("ui_left") and wall_right == false:
+	if dash_right or dash_left:
+		nplay("dash")
+	if Input.is_action_pressed("ui_left") and wall_right == false and dash_left == false:
 		if on_ground:
 			nplay("run")
 		flip_h = true
-	if Input.is_action_pressed("ui_right") and wall_left == false:
+	if Input.is_action_pressed("ui_right") and wall_left == false and dash_right == false:
 		if on_ground:
 			nplay("run")
 		flip_h = false
@@ -35,7 +37,7 @@ func _on_Player_move(velocity, wall_right, wall_left, on_ground):
 	if Input.is_action_pressed("ui_left") == false and Input.is_action_pressed("ui_right") == false and velocity.y > -1 and velocity.y < 26 and on_ground:
 		if animation == "readyfalling":
 			nplay("jumplanding")
-		if animation == "jumplanding" and frame == 2 or animation == "run":
+		if animation == "jumplanding" and frame == 2 or animation == "run" or animation == "dash" and frame == 1:
 			nplay("idle")
 
 

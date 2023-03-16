@@ -1,7 +1,15 @@
-[gd_resource type="SpriteFrames" load_steps=36 format=3 uid="uid://c3qaqms5oug7b"]
+[gd_resource type="SpriteFrames" load_steps=38 format=3 uid="uid://c3qaqms5oug7b"]
 
 [ext_resource type="Texture2D" uid="uid://c0um0smge7r6p" path="res://Player/CatSpriteSheet.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://80xvitmo5mc3" path="res://Player/Cat_Wall_Sprite_Sheet.png" id="2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arrdn"]
+atlas = ExtResource("1")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydsh5"]
+atlas = ExtResource("1")
+region = Rect2(32, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="19"]
 atlas = ExtResource("1")
@@ -137,6 +145,17 @@ region = Rect2(32, 0, 32, 32)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arrdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydsh5")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("19")
