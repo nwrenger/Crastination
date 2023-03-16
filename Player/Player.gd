@@ -17,8 +17,8 @@ var dash_speed := 900
 var dash_total := 0.2
 var dash_timer := 0.0
 var double_press_total := 0.2
-var double_press_timer_left := 0.0
-var double_press_timer_right := 0.0
+var double_press_timer_left := 0.5
+var double_press_timer_right := 0.5
 var cool_down := 0.0
 
 var wall_right := false
@@ -55,14 +55,14 @@ func _physics_process(delta):
 			double_press_timer_right += delta
 		if Input.is_action_just_pressed("ui_right") and double_press_timer_right < double_press_total and not Input.is_action_pressed("ui_left") and not Input.is_action_just_pressed("ui_left"):
 				dash_right = true
-	#			print("dash right")
+				print("dash right")
 		if Input.is_action_just_released("ui_left"):
 			double_press_timer_left = 0
 		else: 
 			double_press_timer_left += delta
 		if Input.is_action_just_pressed("ui_left") and double_press_timer_left < double_press_total and not Input.is_action_pressed("ui_right") and not Input.is_action_just_pressed("ui_right"):
 				dash_left = true
-	#			print("dash left")
+				print("dash left")
 		if notwall and cool_down <= 0:
 			if dash_right:
 				dash_timer += delta
