@@ -54,17 +54,17 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_right"):
 			double_press_timer_right = 0
 			press_count_right = press_count_right + 1
-		else: 
+		else:
 			double_press_timer_right += delta
 			if double_press_timer_right >= dash_total:
-				press_count_right = 0 
+				press_count_right = 0
 		if not Input.is_action_pressed("ui_left") and not dash_right and press_count_right == 2:
 				dash_right = true
 #				print("dash right")
 		if Input.is_action_just_pressed("ui_left"):
 			double_press_timer_left = 0
 			press_count_left = press_count_left + 1
-		else: 
+		else:
 			double_press_timer_left += delta
 			if double_press_timer_left >= dash_total:
 				press_count_left = 0
@@ -168,8 +168,8 @@ func _physics_process(delta):
 		wall_right = false
 		velocity.y = jump_height
 		on_ground = false
-		
-		
+
+
 
 
 func player_killed_slime():
