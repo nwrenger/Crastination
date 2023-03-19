@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://druhtoeqwgkkf"]
+[gd_scene load_steps=7 format=3 uid="uid://druhtoeqwgkkf"]
 
 [ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="1_257ce"]
 [ext_resource type="PackedScene" path="res://World/Terrain/Borders.tscn" id="3_32elx"]
 [ext_resource type="PackedScene" uid="uid://bsprmlvm1l1e5" path="res://Portal/Portal.tscn" id="4_4usvx"]
+[ext_resource type="PackedScene" uid="uid://but135ylsw5jl" path="res://World/Level/End.tscn" id="4_5swsa"]
 [ext_resource type="PackedScene" uid="uid://be5sam8351iyv" path="res://World/Terrain/BackgroundBugged.tscn" id="5_wx5so"]
 [ext_resource type="PackedScene" uid="uid://ct0spru8yxrym" path="res://Player/Player.tscn" id="6_uouoe"]
 
@@ -19,6 +20,7 @@ layer_0/tile_data = PackedInt32Array(262163, 4, 0, 262164, 5, 0, 262165, 4, 3276
 
 [node name="Portal" parent="." instance=ExtResource("4_4usvx")]
 position = Vector2(440, 33)
+NextScene = ExtResource("4_5swsa")
 
 [node name="Player" parent="." instance=ExtResource("6_uouoe")]
 position = Vector2(-9.66667, 63.6667)
