@@ -147,6 +147,7 @@ func _physics_process(delta):
 			velocity.y = wall_fall_speed_final
 
 #velocity
+#	print(velocity)
 	move_and_slide()
 #frame_anim
 	emit_signal("move", velocity, wall_right, wall_left, on_ground, dash_right, dash_left)
