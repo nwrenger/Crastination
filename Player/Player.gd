@@ -150,7 +150,7 @@ func _physics_process(delta):
 #	print(velocity)
 	move_and_slide()
 #frame_anim
-	emit_signal("move", velocity, wall_right, wall_left, on_ground, dash_right, dash_left)
+	emit_signal("move", velocity, wall_right, wall_left, on_ground, dash_right, dash_left, jump_timer)
 
 	if is_on_floor() and not on_ground:
 		on_ground = true
