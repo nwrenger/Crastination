@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=2]
 
 [sub_resource type="Gradient" id=48]
-colors = PoolColorArray( 1, 1, 1, 0.470588, 0, 0, 0, 0 )
+colors = PackedColorArray( 1, 1, 1, 0.470588, 0, 0, 0, 0 )
 
-[sub_resource type="GradientTexture" id=49]
+[sub_resource type="GradientTexture2D" id=49]
 gradient = SubResource( 48 )
 
-[sub_resource type="ParticlesMaterial" id=50]
+[sub_resource type="ParticleProcessMaterial" id=50]
 emission_shape = 1
 emission_sphere_radius = 1.0
 flag_disable_z = true
@@ -20,7 +20,7 @@ scale_random = 1.0
 color = Color( 1, 1, 1, 0.470588 )
 color_ramp = SubResource( 49 )
 
-[node name="JumpParticles" type="Particles2D"]
+[node name="JumpParticles" type="GPUParticles2D"]
 scale = Vector2( 3, 3 )
 amount = 6
 lifetime = 0.75

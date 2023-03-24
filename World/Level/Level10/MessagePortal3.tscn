@@ -1,82 +1,88 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://bws3puyqbcbuu"]
 
-[ext_resource path="res://Fonts/HachicroUndertaleFont/HachicroUndertaleBattleFontRegular-L3zlg.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/Level/Level10/MessagePortal.gd" type="Script" id=3]
-[ext_resource path="res://World/Light/spot.png" type="Texture" id=4]
-[ext_resource path="res://UI/PauseMenu/PauseMenu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Level/Level10/Level10.4.tscn" type="PackedScene" id=6]
+[ext_resource type="PackedScene" uid="uid://b1dniodjt75fr" path="res://World/Terrain/Background.tscn" id="2"]
+[ext_resource type="Script" path="res://World/Level/Level10/MessagePortal.gd" id="3"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="4_04bkn"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="4_rinjx"]
+[ext_resource type="PackedScene" uid="uid://0tg2d6uiwxyf" path="res://UI/PauseMenu/PauseMenu.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://bfblk6ugj6f1y" path="res://World/Level/Level10/Level10.4.tscn" id="6"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "main"
 length = 10.0
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("CanvasLayer/ColorRect:self_modulate")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3, 5, 10 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 3, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.967742 ) ]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 0.967742)]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/Text:bbcode_text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ "DON'T GET DISTRACTED!!", "NOW IT'S TOO LATE..." ]
+"values": ["DON'T GET DISTRACTED!!", "NOW IT'S TOO LATE..."]
 }
 
-[sub_resource type="DynamicFont" id=2]
-size = 35
-font_data = ExtResource( 1 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sotau"]
+_data = {
+"main": SubResource("1")
+}
 
 [node name="MessagePortal" type="Node2D"]
-script = ExtResource( 3 )
-NextScene = ExtResource( 6 )
+texture_filter = 2
+script = ExtResource("3")
+NextScene = ExtResource("6")
 
-[node name="Background" parent="." instance=ExtResource( 2 )]
+[node name="Background" parent="." instance=ExtResource("2")]
 
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 640, 360 )
-scale = Vector2( 5, 5 )
-texture = ExtResource( 4 )
-energy = 2.48
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(644, 360)
+blend_mode = 1
+texture = ExtResource("4_rinjx")
+texture_scale = 6.35
 
 [node name="AnimationFade" type="AnimationPlayer" parent="."]
 method_call_mode = 1
-anims/main = SubResource( 1 )
+libraries = {
+"": SubResource("AnimationLibrary_sotau")
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -372.0
-margin_top = -21.0
-margin_right = 414.0
-margin_bottom = 21.0
-custom_fonts/normal_font = SubResource( 2 )
-bbcode_text = "NOW IT'S TOO LATE..."
+offset_left = -372.0
+offset_top = -21.0
+offset_right = 414.0
+offset_bottom = 21.0
+theme_override_fonts/normal_font = ExtResource("4_04bkn")
+theme_override_font_sizes/normal_font_size = 35
 text = "NOW IT'S TOO LATE..."
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-self_modulate = Color( 0, 0, 0, 0.967742 )
-margin_right = 1280.0
-margin_bottom = 720.0
-color = Color( 0, 0, 0, 1 )
+self_modulate = Color(0, 0, 0, 0.967742)
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 5 )]
-pause_mode = 2
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5")]
 
 [connection signal="animation_finished" from="AnimationFade" to="." method="_on_Animation_animation_finished"]

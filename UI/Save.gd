@@ -3,33 +3,42 @@ extends Node
 var file := "user://save.json"
 var volume := 1.0
 var level := 0
+var zoom := 1.5
+var time := 0.0
+var dash := false
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	#todo load
-	var f := File.new()
-	if f.open(file, File.READ) == OK:
-		var save = parse_json(f.get_as_text())
+	var f := FileAccess.open(file,FileAccess.READ)
+	if FileAccess.file_exists(file):
+		var test_json_conv = JSON.new()
+		test_json_conv.parse(f.get_as_text(), true)
+		var save = test_json_conv.get_data()
 		if save is Dictionary:
 #			print(save)
-			OS.window_fullscreen = save.get("fullscreen", OS.window_fullscreen)
+			get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (save.get("fullscreen", ((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN)))) else Window.MODE_WINDOWED
 			volume = save.get("volume", volume)
 			level = save.get("level", level)
-
+			zoom = save.get("zoom", zoom)
+			time = save.get("time", time)
+			dash = save.get("dash", dash)
 
 func _notification(what):
-	match what:
-		MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-			#todo save
-			for node in get_tree().get_nodes_in_group("Save"):
-				node.save()
-#			print("saving")
-			var f := File.new()
-			if f.open(file, File.WRITE) == OK:
-				var save = {
-					"fullscreen": OS.window_fullscreen,
-					"volume": volume,
-					"level": level,
-				}
-				f.store_string(to_json(save))
-			get_tree().quit()
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		#todo save
+#		print("saving")
+		for node in get_tree().get_nodes_in_group("Save"):
+			node.save()
+#			print("save_group")
+		var f := FileAccess.open(file, FileAccess.WRITE)
+		var save = {
+			"fullscreen": ((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN)),
+			"volume": volume,
+			"level": level,
+			"zoom": zoom,
+			"time": time,
+			"dash": dash,
+		}
+		f.store_string(JSON.stringify(save))
+		get_tree().quit()

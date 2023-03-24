@@ -1,9 +1,9 @@
 extends ColorRect
 
-export var shortcut: ShortCut
+@export var shortcut: Shortcut
 
 func _input(event: InputEvent) -> void:
-	if shortcut.is_shortcut(event):
+	if shortcut.matches_event(event):
 		if event is InputEventKey and event.is_pressed():
 			toggle()
 

@@ -1,107 +1,113 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=16 format=3 uid="uid://bqhojd22khehp"]
 
-[ext_resource path="res://World/Terrain/Tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player/CatSpriteSheet.png" type="Texture" id=3]
-[ext_resource path="res://World/Light/spot.png" type="Texture" id=4]
-[ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Level/Level10/BordersTP.gd" type="Script" id=6]
-[ext_resource path="res://World/Level/Level10/Level10.1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Fonts/Text.tres" type="DynamicFont" id=8]
-[ext_resource path="res://Portal/Portal.tscn" type="PackedScene" id=9]
+[ext_resource type="TileSet" uid="uid://dmwva45vx8phu" path="res://World/Terrain/Tileset.tres" id="1"]
+[ext_resource type="PackedScene" uid="uid://ct0spru8yxrym" path="res://Player/Player.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://c0um0smge7r6p" path="res://Player/CatSpriteSheet.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://b1dniodjt75fr" path="res://World/Terrain/Background.tscn" id="5"]
+[ext_resource type="Script" path="res://World/Level/Level10/BordersTP.gd" id="6"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="6_llp6p"]
+[ext_resource type="PackedScene" uid="uid://x857qw1vgq3c" path="res://World/Level/Level10/Level10.1.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://bsprmlvm1l1e5" path="res://Portal/Portal.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="9_jrj1v"]
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 12500, 3 )
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(12500, 3)
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 192, 32, 32 )
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("3")
+region = Rect2(0, 192, 32, 32)
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 192, 32, 32 )
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("3")
+region = Rect2(32, 192, 32, 32)
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 3 )
-region = Rect2( 64, 192, 32, 32 )
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("3")
+region = Rect2(64, 192, 32, 32)
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 3 )
-region = Rect2( 96, 192, 32, 32 )
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("3")
+region = Rect2(96, 192, 32, 32)
 
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+[sub_resource type="SpriteFrames" id="5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("1")
+}, {
+"duration": 1.0,
+"texture": SubResource("2")
+}, {
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 5.0
-} ]
+}]
 
 [node name="Level10" type="TileMap"]
-scale = Vector2( 3, 3 )
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 8 )
-show_collision = true
-collision_layer = 3
-collision_mask = 3
-format = 1
-tile_data = PoolIntArray( 131098, 6, 0, 131099, 5, 0, 131100, 3, 0, 131101, 5, 0, 131102, 3, 0, 131103, 5, 0, 131104, 3, 0, 131105, 5, 0, 131106, 3, 0, 131107, -1610612732, 0, 196631, 4, 0, 196632, 3, 0, 196633, 3, 0, 196634, -536870910, 0, 196635, 1610612736, 0, 196636, -1073741823, 0, 196637, 2, 0, 196638, 1610612736, 0, 196639, -536870910, 0, 196640, 1610612736, 0, 196641, -2147483646, 0, 196642, 1610612741, 0, 196643, 1610612740, 0, 327672, -2147483644, 0, 327673, 5, 0, 327674, 3, 0, 327675, 5, 0, 327676, 3, 0, 327677, 5, 0, 327678, 3, 0, 327679, 5, 0, 262144, 3, 0, 262145, 5, 0, 262146, 3, 0, 262147, 5, 0, 262148, 3, 0, 262149, 5, 0, 262150, 3, 0, 262151, 536870916, 0, 262167, -1073741820, 0, 262168, 1610612739, 0, 262169, 1610612741, 0, 262170, 1610612739, 0, 262171, 1610612736, 0, 262172, 2, 0, 262173, 1610612736, 0, 262174, 536870914, 0, 262175, -536870911, 0, 262176, 1610612739, 0, 262177, 1610612740, 0, 393208, 1073741828, 0, 393209, 1073741824, 0, 393210, -2147483646, 0, 393211, -1610612735, 0, 393212, 1073741826, 0, 393213, 1073741824, 0, 393214, -1073741822, 0, 393215, 1073741824, 0, 327680, 1073741824, 0, 327681, 1073741824, 0, 327682, 1073741824, 0, 327683, -1610612734, 0, 327684, 1610612737, 0, 327685, 2, 0, 327686, -2147483646, 0, 327687, -536870908, 0, 327707, -1073741820, 0, 327708, 1610612741, 0, 327709, 1610612739, 0, 327710, 1610612741, 0, 327711, 1610612740, 0, 458745, 1073741828, 0, 458746, 1610612739, 0, 458747, -1610612734, 0, 458748, 1073741824, 0, 458749, 1073741826, 0, 458750, 536870913, 0, 458751, 2, 0, 393216, 1073741824, 0, 393217, 1073741824, 0, 393218, 1610612738, 0, 393219, 1610612741, 0, 393220, 1610612739, 0, 393221, 1610612741, 0, 393222, -536870908, 0, 524283, 1073741828, 0, 524284, 1610612741, 0, 524285, 1610612739, 0, 524286, 1610612741, 0, 524287, 1610612739, 0, 458752, 1610612741, 0, 458753, 1610612739, 0, 458754, -536870908, 0 )
+scale = Vector2(3, 3)
+tile_set = ExtResource("1")
+format = 2
+layer_0/tile_data = PackedInt32Array(131098, 6, 0, 131099, 5, 0, 131100, 3, 0, 131101, 5, 0, 131102, 3, 0, 131103, 5, 0, 131104, 3, 0, 131105, 5, 0, 131106, 3, 0, 131107, 4, 327680, 196631, 4, 0, 196632, 3, 0, 196633, 3, 0, 196634, 2, 458752, 196635, 0, 196608, 196636, 1, 393216, 196637, 2, 0, 196638, 0, 196608, 196639, 2, 458752, 196640, 0, 196608, 196641, 2, 262144, 196642, 5, 196608, 196643, 4, 196608, 327672, 4, 262144, 327673, 5, 0, 327674, 3, 0, 327675, 5, 0, 327676, 3, 0, 327677, 5, 0, 327678, 3, 0, 327679, 5, 0, 262144, 3, 0, 262145, 5, 0, 262146, 3, 0, 262147, 5, 0, 262148, 3, 0, 262149, 5, 0, 262150, 3, 0, 262151, 4, 65536, 262167, 4, 393216, 262168, 3, 196608, 262169, 5, 196608, 262170, 3, 196608, 262171, 0, 196608, 262172, 2, 0, 262173, 0, 196608, 262174, 2, 65536, 262175, 1, 458752, 262176, 3, 196608, 262177, 4, 196608, 393208, 4, 131072, 393209, 0, 131072, 393210, 2, 262144, 393211, 1, 327680, 393212, 2, 131072, 393213, 0, 131072, 393214, 2, 393216, 393215, 0, 131072, 327680, 0, 131072, 327681, 0, 131072, 327682, 0, 131072, 327683, 2, 327680, 327684, 1, 196608, 327685, 2, 0, 327686, 2, 262144, 327687, 4, 458752, 327707, 4, 393216, 327708, 5, 196608, 327709, 3, 196608, 327710, 5, 196608, 327711, 4, 196608, 458745, 4, 131072, 458746, 3, 196608, 458747, 2, 327680, 458748, 0, 131072, 458749, 2, 131072, 458750, 1, 65536, 458751, 2, 0, 393216, 0, 131072, 393217, 0, 131072, 393218, 2, 196608, 393219, 5, 196608, 393220, 3, 196608, 393221, 5, 196608, 393222, 4, 458752, 524283, 4, 131072, 524284, 5, 196608, 524285, 3, 196608, 524286, 5, 196608, 524287, 3, 196608, 458752, 5, 196608, 458753, 3, 196608, 458754, 4, 458752)
 
-[node name="Background" parent="." instance=ExtResource( 5 )]
+[node name="Background" parent="." instance=ExtResource("5")]
 
-[node name="Portal" parent="." instance=ExtResource( 9 )]
+[node name="Portal" parent="." instance=ExtResource("9")]
 visible = false
-position = Vector2( 0, 58 )
-NextScene = ExtResource( 7 )
+position = Vector2(0, 58)
+NextScene = ExtResource("7")
 
 [node name="BordersTP" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource( 6 )
-NextScene = ExtResource( 7 )
+script = ExtResource("6")
+NextScene = ExtResource("7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BordersTP"]
-position = Vector2( 0, 200 )
-shape = SubResource( 6 )
+position = Vector2(0, 200)
+shape = SubResource("6")
 
 [node name="Text" type="RichTextLabel" parent="."]
-margin_left = 123.0
-margin_top = -11.6667
-margin_right = 142.0
-margin_bottom = -0.666667
-custom_fonts/normal_font = ExtResource( 8 )
+offset_left = 123.0
+offset_top = -11.6667
+offset_right = 142.0
+offset_bottom = -0.666667
+theme_override_fonts/normal_font = ExtResource("6_llp6p")
+theme_override_font_sizes/normal_font_size = 7
 text = "->"
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource("2")]
 
-[node name="DarkCat" type="Node2D" parent="."]
-light_mask = 3
-position = Vector2( 246.667, 0.333333 )
-
-[node name="Sprite" type="AnimatedSprite" parent="DarkCat"]
-modulate = Color( 0, 0, 0, 1 )
+[node name="DarkCat" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
 light_mask = 2
-frames = SubResource( 5 )
-frame = 3
-playing = true
+position = Vector2(246.667, 0.333333)
+sprite_frames = SubResource("5")
+autoplay = "default"
 
-[node name="Light" type="Light2D" parent="DarkCat"]
-light_mask = 3
-position = Vector2( -1.33334, -10.3333 )
-texture = ExtResource( 4 )
-offset = Vector2( 0, 20 )
-mode = 1
-shadow_buffer_size = 4096
-shadow_item_cull_mask = 3
-
-[node name="Light2" type="Light2D" parent="DarkCat"]
-light_mask = 3
-position = Vector2( -1.33334, -10.3333 )
-texture = ExtResource( 4 )
-offset = Vector2( 0, 20 )
+[node name="NoShadow" type="PointLight2D" parent="DarkCat"]
+texture_filter = 2
+position = Vector2(0, 7)
+energy = 0.75
+blend_mode = 1
+texture = ExtResource("9_jrj1v")
 texture_scale = 0.6
-mode = 1
-shadow_gradient_length = 2.0
+
+[node name="Shadow" type="PointLight2D" parent="DarkCat"]
+light_mask = 3
+visibility_layer = 3
+texture_filter = 2
+position = Vector2(0, 7)
+blend_mode = 1
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
 shadow_item_cull_mask = 3
+texture = ExtResource("9_jrj1v")
 
 [connection signal="body_entered" from="BordersTP" to="BordersTP" method="BordersTP_entered"]
