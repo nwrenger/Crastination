@@ -1,259 +1,319 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=3 uid="uid://djljxmuirevbj"]
 
-[ext_resource path="res://Fonts/HachicroUndertaleFont/HachicroUndertaleBattleFontRegular-L3zlg.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Player/PlayerSprites.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://World/Title.gd" type="Script" id=3]
-[ext_resource path="res://World/Level/Level1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://UI/Music/MusicStopButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Light/spot.png" type="Texture" id=6]
-[ext_resource path="res://World/Terrain/Background.tscn" type="PackedScene" id=7]
-[ext_resource path="res://UI/Itch.ioButton/ItchioButton.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Fonts/TitleText.tres" type="DynamicFont" id=9]
-[ext_resource path="res://UI/Fullscreen/FullscreenButton.tscn" type="PackedScene" id=10]
-[ext_resource path="res://World/Level/Level2.tscn" type="PackedScene" id=11]
-[ext_resource path="res://World/Level/Level3.tscn" type="PackedScene" id=12]
-[ext_resource path="res://World/Level/Level4.tscn" type="PackedScene" id=13]
-[ext_resource path="res://World/Level/Level6.tscn" type="PackedScene" id=14]
-[ext_resource path="res://World/Level/Level5.tscn" type="PackedScene" id=15]
-[ext_resource path="res://World/Level/Level8.tscn" type="PackedScene" id=16]
-[ext_resource path="res://World/Level/Level7.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Fonts/ButtonText.tres" type="DynamicFont" id=18]
-[ext_resource path="res://World/Level/Start.tscn" type="PackedScene" id=19]
-[ext_resource path="res://World/Level/Level9.tscn" type="PackedScene" id=20]
-[ext_resource path="res://World/Level/Level10/Level10.tscn" type="PackedScene" id=21]
+[ext_resource type="Texture2D" uid="uid://cuswq8nnojc5y" path="res://World/Terrain/Background.png" id="1_3jeb6"]
+[ext_resource type="Texture2D" uid="uid://ccpb7v2cr2hny" path="res://World/Terrain/BackgroundBugged.png" id="2_8p52c"]
+[ext_resource type="SpriteFrames" uid="uid://c3qaqms5oug7b" path="res://Player/PlayerSprites.tres" id="2_m74x0"]
+[ext_resource type="Script" path="res://World/Title.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="3_ulocx"]
+[ext_resource type="PackedScene" uid="uid://cgrs1mfj4e2jd" path="res://World/Level/Level1.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://rpwxhbcs7gbf" path="res://World/Light/light.png" id="4_2psgt"]
+[ext_resource type="PackedScene" uid="uid://bku0f3at4d2mb" path="res://UI/Music/MusicStopButton.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://bacx1pf3uyllq" path="res://UI/Itch.ioButton/ItchioButton.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://dstdl7y5x6vik" path="res://UI/Fullscreen/FullscreenButton.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://nuink81gy7tc" path="res://World/Level/Level2.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://by3ibksf8cmw8" path="res://World/Level/Level3.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://0d8iso6xfhfr" path="res://World/Level/Level4.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://ci5u35t8enmvc" path="res://World/Level/Level6.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://bhgym5shfxgmk" path="res://World/Level/Level5.tscn" id="15"]
+[ext_resource type="FontFile" path="res://Fonts/Text.tres" id="15_5j26o"]
+[ext_resource type="PackedScene" uid="uid://bq0qbw1k1htd7" path="res://World/Level/Level8.tscn" id="16"]
+[ext_resource type="PackedScene" uid="uid://drydu7m67jwjt" path="res://World/Level/Level7.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://druhtoeqwgkkf" path="res://World/Level/Level11.tscn" id="17_mjjni"]
+[ext_resource type="PackedScene" uid="uid://dnxwy1ijemslv" path="res://World/Level/Start.tscn" id="19"]
+[ext_resource type="PackedScene" uid="uid://d2q17umom1x3k" path="res://World/Level/Level9.tscn" id="20"]
+[ext_resource type="PackedScene" uid="uid://bqhojd22khehp" path="res://World/Level/Level10/Level10.tscn" id="21"]
 
-[sub_resource type="OccluderPolygon2D" id=5]
-polygon = PoolVector2Array( 418, 73, 418, 78, 413, 78, 413, 103, 418, 103, 418, 108, 443, 108, 443, 103, 448, 103, 448, 78, 443, 78, 443, 73 )
+[sub_resource type="OccluderPolygon2D" id="5"]
+polygon = PackedVector2Array(418, 73, 418, 78, 413, 78, 413, 103, 418, 103, 418, 108, 443, 108, 443, 103, 448, 103, 448, 78, 443, 78, 443, 73)
 
-[sub_resource type="OccluderPolygon2D" id=6]
-polygon = PoolVector2Array( 453, 73, 453, 108, 468, 108, 468, 93, 488, 93, 488, 78, 483, 78, 483, 73 )
+[sub_resource type="OccluderPolygon2D" id="6"]
+polygon = PackedVector2Array(453, 73, 453, 108, 468, 108, 468, 93, 488, 93, 488, 78, 483, 78, 483, 73)
 
-[sub_resource type="OccluderPolygon2D" id=7]
-polygon = PoolVector2Array( 493, 73, 493, 103, 498, 103, 498, 108, 528, 108, 528, 78, 523, 78, 523, 73 )
+[sub_resource type="OccluderPolygon2D" id="7"]
+polygon = PackedVector2Array(493, 73, 493, 103, 498, 103, 498, 108, 528, 108, 528, 78, 523, 78, 523, 73)
 
-[sub_resource type="OccluderPolygon2D" id=8]
-polygon = PoolVector2Array( 538, 73, 538, 78, 533, 78, 533, 93, 538, 93, 538, 108, 563, 108, 563, 103, 568, 103, 568, 88, 563, 88, 563, 73 )
+[sub_resource type="OccluderPolygon2D" id="8"]
+polygon = PackedVector2Array(538, 73, 538, 78, 533, 78, 533, 93, 538, 93, 538, 108, 563, 108, 563, 103, 568, 103, 568, 88, 563, 88, 563, 73)
 
-[sub_resource type="OccluderPolygon2D" id=9]
-polygon = PoolVector2Array( 578, 72, 578, 77, 573, 77, 573, 92, 578, 92, 578, 102, 583, 102, 583, 107, 603, 107, 603, 102, 608, 102, 608, 82, 603, 82, 603, 77, 593, 77, 593, 72 )
+[sub_resource type="OccluderPolygon2D" id="9"]
+polygon = PackedVector2Array(578, 72, 578, 77, 573, 77, 573, 92, 578, 92, 578, 102, 583, 102, 583, 107, 603, 107, 603, 102, 608, 102, 608, 82, 603, 82, 603, 77, 593, 77, 593, 72)
 
-[sub_resource type="OccluderPolygon2D" id=10]
-polygon = PoolVector2Array( 613, 72, 628, 72, 628, 107, 613, 107 )
+[sub_resource type="OccluderPolygon2D" id="10"]
+polygon = PackedVector2Array(613, 72, 628, 72, 628, 107, 613, 107)
 
-[sub_resource type="OccluderPolygon2D" id=11]
-polygon = PoolVector2Array( 633, 72, 633, 107, 648, 107, 648, 87, 653, 87, 653, 107, 668, 107, 668, 77, 663, 77, 663, 72 )
+[sub_resource type="OccluderPolygon2D" id="11"]
+polygon = PackedVector2Array(633, 72, 633, 107, 648, 107, 648, 87, 653, 87, 653, 107, 668, 107, 668, 77, 663, 77, 663, 72)
 
-[sub_resource type="OccluderPolygon2D" id=12]
-polygon = PoolVector2Array( 778, 72, 778, 77, 773, 77, 773, 102, 778, 102, 778, 107, 803, 107, 803, 102, 808, 102, 808, 77, 803, 77, 803, 72 )
+[sub_resource type="OccluderPolygon2D" id="12"]
+polygon = PackedVector2Array(778, 72, 778, 77, 773, 77, 773, 102, 778, 102, 778, 107, 803, 107, 803, 102, 808, 102, 808, 77, 803, 77, 803, 72)
 
-[sub_resource type="DynamicFont" id=2]
-size = 21
-font_data = ExtResource( 1 )
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 resource_name = "FadeIn"
 length = 0.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("AnimationFade/Fade:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PointLight2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id="4"]
 resource_name = "FadeOut"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("AnimationFade/Fade:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PointLight2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vp76y"]
+_data = {
+"FadeIn": SubResource("3"),
+"FadeOut": SubResource("4")
 }
 
 [node name="Title" type="Node2D"]
+script = ExtResource("3")
+Start = ExtResource("19")
+Level1 = ExtResource("4")
+Level2 = ExtResource("11")
+Level3 = ExtResource("12")
+Level4 = ExtResource("13")
+Level5 = ExtResource("15")
+Level6 = ExtResource("14")
+Level7 = ExtResource("17")
+Level8 = ExtResource("16")
+Level9 = ExtResource("20")
+Level10 = ExtResource("21")
+Level11 = ExtResource("17_mjjni")
 
-[node name="Background" parent="." instance=ExtResource( 7 )]
-position = Vector2( 0, 1 )
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+show_behind_parent = true
+scale = Vector2(100, 100)
+texture = ExtResource("1_3jeb6")
 
-[node name="Cat" type="AnimatedSprite" parent="."]
+[node name="BackgroundBugged" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.588235)
+show_behind_parent = true
+position = Vector2(640, 360)
+scale = Vector2(50, 50)
+texture = ExtResource("2_8p52c")
+
+[node name="CatSprite" type="AnimatedSprite2D" parent="."]
 light_mask = 2
-position = Vector2( 568, 10 )
-scale = Vector2( 4, 4 )
-frames = ExtResource( 2 )
-animation = "idle"
-playing = true
+position = Vector2(577, 26)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("2_m74x0")
+animation = &"idle"
+autoplay = "idle"
+metadata/_edit_group_ = true
 
-[node name="Light" type="Light2D" parent="Cat"]
+[node name="NoShadow" type="PointLight2D" parent="CatSprite"]
+texture_filter = 2
+position = Vector2(0, 7)
+energy = 0.75
+texture = ExtResource("3_ulocx")
+texture_scale = 0.6
+
+[node name="Shadow" type="PointLight2D" parent="CatSprite"]
 light_mask = 3
-position = Vector2( 2.25, 8.25 )
-texture = ExtResource( 6 )
-offset = Vector2( -2, 0 )
+visibility_layer = 3
+texture_filter = 2
+position = Vector2(0, 7)
 shadow_enabled = true
-shadow_filter = 5
-shadow_filter_smooth = 1.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
 shadow_item_cull_mask = 3
+texture = ExtResource("3_ulocx")
 
 [node name="Shadow" type="Node2D" parent="."]
-position = Vector2( 0, 2 )
+position = Vector2(0, 2)
 
 [node name="c" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 7, -1 )
-occluder = SubResource( 5 )
+position = Vector2(7, -1)
+occluder = SubResource("5")
 
 [node name="r" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 7, -1 )
-occluder = SubResource( 6 )
+position = Vector2(7, -1)
+occluder = SubResource("6")
 
 [node name="a" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 7, -1 )
-occluder = SubResource( 7 )
+position = Vector2(7, -1)
+occluder = SubResource("7")
 
 [node name="s" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 7, -1 )
-occluder = SubResource( 8 )
+position = Vector2(7, -1)
+occluder = SubResource("8")
 
 [node name="t" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 7, 0 )
-occluder = SubResource( 9 )
+position = Vector2(7, 0)
+occluder = SubResource("9")
 
 [node name="i" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 7, 0 )
-occluder = SubResource( 10 )
+position = Vector2(7, 0)
+occluder = SubResource("10")
 
 [node name="n" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 7, 0 )
-occluder = SubResource( 11 )
+position = Vector2(7, 0)
+occluder = SubResource("11")
 
 [node name="a2" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 187, -1 )
-occluder = SubResource( 7 )
+position = Vector2(187, -1)
+occluder = SubResource("7")
 
 [node name="t2" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 147, 0 )
-occluder = SubResource( 9 )
+position = Vector2(147, 0)
+occluder = SubResource("9")
 
 [node name="i2" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 147, 0 )
-occluder = SubResource( 10 )
+position = Vector2(147, 0)
+occluder = SubResource("10")
 
 [node name="o" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 7, 0 )
-occluder = SubResource( 12 )
+position = Vector2(7, 0)
+occluder = SubResource("12")
 
 [node name="n2" type="LightOccluder2D" parent="Shadow"]
-position = Vector2( 187, 0 )
-occluder = SubResource( 11 )
+position = Vector2(187, 0)
+occluder = SubResource("11")
 
-[node name="Button Light" type="Light2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
-position = Vector2( 661, 355 )
-texture = ExtResource( 6 )
-texture_scale = 10.0
-energy = 2.0
+texture_filter = 2
+position = Vector2(660, 363)
+energy = 7.0
 shadow_enabled = true
-shadow_filter = 5
-shadow_filter_smooth = 1.0
+shadow_filter = 1
+texture = ExtResource("4_2psgt")
 
 [node name="Canvas" type="CanvasLayer" parent="."]
-script = ExtResource( 3 )
-Start = ExtResource( 19 )
-Level1 = ExtResource( 4 )
-Level2 = ExtResource( 11 )
-Level3 = ExtResource( 12 )
-Level4 = ExtResource( 13 )
-Level5 = ExtResource( 15 )
-Level6 = ExtResource( 14 )
-Level7 = ExtResource( 17 )
-Level8 = ExtResource( 16 )
-Level9 = ExtResource( 20 )
-Level10 = ExtResource( 21 )
 
 [node name="CurrentLevel" type="RichTextLabel" parent="Canvas"]
 visible = false
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -170.5
-margin_top = 26.0
-margin_right = 170.5
-margin_bottom = 66.0
-custom_fonts/normal_font = ExtResource( 18 )
+offset_left = -170.0
+offset_top = 26.0
+offset_right = 208.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("15_5j26o")
+theme_override_font_sizes/normal_font_size = 21
 text = "Current Level:"
 
-[node name="FullscreenButton" parent="Canvas" instance=ExtResource( 10 )]
+[node name="FullscreenButton" parent="Canvas" instance=ExtResource("10")]
 
-[node name="ItchioButton" parent="Canvas" instance=ExtResource( 8 )]
+[node name="ItchioButton" parent="Canvas" instance=ExtResource("8")]
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -59.0001
-margin_top = -53.0001
-margin_right = 2353.0
-margin_bottom = 2079.0
+offset_left = -59.0001
+offset_top = -53.0001
+offset_right = 2353.0
+offset_bottom = 2079.0
 
 [node name="Button" type="Button" parent="Canvas"]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -54.0
-margin_top = -15.0
-margin_right = 54.0
-margin_bottom = 15.0
-custom_fonts/font = SubResource( 2 )
+offset_left = -54.0
+offset_top = -15.0
+offset_right = 54.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("15_5j26o")
+theme_override_font_sizes/font_size = 21
 toggle_mode = true
 text = "PLAY"
 
 [node name="ClearData" type="Button" parent="Canvas"]
+anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = -35.0
-margin_right = 343.0
-margin_bottom = -5.0
-custom_fonts/font = ExtResource( 18 )
+offset_left = 6.0
+offset_top = -35.0
+offset_right = 343.0
+offset_bottom = -5.0
+theme_override_fonts/font = ExtResource("15_5j26o")
+theme_override_font_sizes/font_size = 21
 text = "Clear Save Data"
 
 [node name="Text" type="RichTextLabel" parent="Canvas"]
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -220.5
-margin_top = 74.0
-margin_right = 220.5
-margin_bottom = 116.0
-custom_fonts/normal_font = ExtResource( 9 )
+offset_left = -220.5
+offset_top = 74.0
+offset_right = 220.5
+offset_bottom = 116.0
+theme_override_fonts/normal_font = ExtResource("15_5j26o")
+theme_override_font_sizes/normal_font_size = 35
 text = "crastination"
 
-[node name="MusicStopButton" parent="Canvas" instance=ExtResource( 5 )]
+[node name="MusicStopButton" parent="Canvas" instance=ExtResource("5")]
 
 [node name="AnimationFade" type="AnimationPlayer" parent="Canvas"]
-anims/FadeIn = SubResource( 3 )
-anims/FadeOut = SubResource( 4 )
+libraries = {
+"": SubResource("AnimationLibrary_vp76y")
+}
 
 [node name="Fade" type="ColorRect" parent="Canvas/AnimationFade"]
-self_modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -666.0
-margin_top = -377.5
-margin_right = 666.0
-margin_bottom = 377.5
+offset_left = -666.0
+offset_top = -377.5
+offset_right = 666.0
+offset_bottom = 377.5
 mouse_filter = 2
 
-[connection signal="pressed" from="Canvas/Button" to="Canvas" method="toggle"]
-[connection signal="pressed" from="Canvas/ClearData" to="Canvas" method="ClearData_pressed"]
+[connection signal="pressed" from="Canvas/Button" to="." method="toggle"]
+[connection signal="pressed" from="Canvas/ClearData" to="." method="ClearData_pressed"]

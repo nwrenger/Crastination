@@ -1,19 +1,17 @@
 extends Node2D
 
-export var NextScene: PackedScene
-var TotalLevel := 11
+@export var NextScene: PackedScene
+var TotalLevel := 21
 
 
 func Area_entered(_body):
-	$Light.show()
 	$AnimationFade.play("FadeOut")
-	$Light.energy = 1.8
+	$Light.energy = 3
 	$Light.scale = Vector2(1.5,1.5)
-	yield($AnimationFade, "animation_finished")
-	# warning-ignore:return_value_discarded
-	get_tree().change_scene_to(NextScene)
+	await $AnimationFade.animation_finished
+	get_tree().change_scene_to_packed(NextScene)
 
-func _enter_tree():
+func _ready():
 	#todo proof for less work
 	for i in TotalLevel:
 		if get_parent().name == "Level" + str(i):
