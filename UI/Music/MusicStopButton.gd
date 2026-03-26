@@ -1,13 +1,13 @@
 extends Button
 
-export var width := 16
-export var slider: NodePath
+@export var width := 16
+@export var slider: NodePath
 
-onready var _slider = get_node(slider)
-onready var style_hover := get("custom_styles/hover") as StyleBoxTexture
-onready var style_pressed := get("custom_styles/pressed") as StyleBoxTexture
-onready var style_normal := get("custom_styles/normal") as StyleBoxTexture
-onready var style_disabled := get("custom_styles/disabled") as StyleBoxTexture
+@onready var _slider = get_node(slider)
+@onready var style_hover := get("theme_override_styles/hover") as StyleBoxTexture
+@onready var style_pressed := get("theme_override_styles/pressed") as StyleBoxTexture
+@onready var style_normal := get("theme_override_styles/normal") as StyleBoxTexture
+@onready var style_disabled := get("theme_override_styles/disabled") as StyleBoxTexture
 
 enum State{
 	MUTED,
@@ -16,7 +16,8 @@ enum State{
 	LOUD,
 }
 
-var state :int = State.LOUD setget set_state
+var state :int = State.LOUD : set = set_state
+var last_state: float
 
 
 func _ready():
@@ -32,9 +33,13 @@ func save():
 
 func _pressed():
 	if state == State.MUTED:
-		_slider.value = 1
-		set_state(State.LOUD)
+		if last_state == 0:
+			_slider.value = 1
+		else:
+			_slider.value = last_state
 	else:
+		last_state = _slider.value
+#		print(last_state)
 		_slider.value = 0
 		set_state(State.MUTED)
 

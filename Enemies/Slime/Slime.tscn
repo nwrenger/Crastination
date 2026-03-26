@@ -1,123 +1,168 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=3 uid="uid://csls6t3rsm324"]
 
-[ext_resource path="res://Enemies/Slime/death/slime_death 6.png" type="Texture" id=1]
-[ext_resource path="res://Enemies/Slime/death/slime_death 2.png" type="Texture" id=2]
-[ext_resource path="res://Enemies/Slime/death/slime_death 4.png" type="Texture" id=3]
-[ext_resource path="res://Enemies/Slime/death/slime_death.png" type="Texture" id=4]
-[ext_resource path="res://Enemies/Slime/death/slime_death 5.png" type="Texture" id=5]
-[ext_resource path="res://Enemies/Slime/death/slime_death 3.png" type="Texture" id=6]
-[ext_resource path="res://Enemies/Slime/idle/slime.png" type="Texture" id=7]
-[ext_resource path="res://Enemies/Slime/idle/slime 2.png" type="Texture" id=8]
-[ext_resource path="res://Enemies/Slime/idle/slime 3.png" type="Texture" id=9]
-[ext_resource path="res://Enemies/Slime/idle/slime 4.png" type="Texture" id=10]
-[ext_resource path="res://Enemies/Slime/Slime.gd" type="Script" id=11]
-[ext_resource path="res://World/Light/spot.png" type="Texture" id=12]
+[ext_resource type="Texture2D" uid="uid://6s1qb1c5q8bh" path="res://Enemies/Slime/death/slime_death 6.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://xixso666o782" path="res://Enemies/Slime/death/slime_death 2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://r3q07rwh66cg" path="res://Enemies/Slime/death/slime_death 4.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://urj3orhithw8" path="res://Enemies/Slime/death/slime_death.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://o635mpgpvopk" path="res://Enemies/Slime/death/slime_death 5.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://irmoadit14yf" path="res://Enemies/Slime/death/slime_death 3.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b5b6b45gga6x6" path="res://Enemies/Slime/idle/slime.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cuwyqv5ld6228" path="res://Enemies/Slime/idle/slime 2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://do0vfm15wvgey" path="res://Enemies/Slime/idle/slime 3.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dgoga60xoqxa7" path="res://Enemies/Slime/idle/slime 4.png" id="10"]
+[ext_resource type="Script" path="res://Enemies/Slime/Slime.gd" id="11"]
+[ext_resource type="Texture2D" uid="uid://buo25vgp3y7ea" path="res://World/Light/spot.png" id="12_ro8w2"]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ) ],
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
 "loop": false,
-"name": "death",
+"name": &"death",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
 "loop": true,
-"name": "idle",
+"name": &"idle",
 "speed": 12.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6, 5.5 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(12, 9)
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 7, 5.25 )
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(14, 7.875)
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 6, 0.5 )
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(12, 1)
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id="7"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [Vector2(0, 0)]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ false ]
+"values": [false]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 resource_name = "normal"
 length = 3.0
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 35, 0 ), Vector2( -35, 0 ) ]
+"values": [Vector2(35, 0), Vector2(-35, 0)]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pletp"]
+_data = {
+"RESET": SubResource("7"),
+"normal": SubResource("3")
 }
 
 [node name="Slime" type="Node2D"]
-script = ExtResource( 11 )
+script = ExtResource("11")
 
-[node name="Slime" type="KinematicBody2D" parent="."]
-motion/sync_to_physics = true
-moving_platform_apply_velocity_on_leave = 1
+[node name="Slime" type="AnimatableBody2D" parent="."]
 
-[node name="Sprite" type="AnimatedSprite" parent="Slime"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Slime"]
 light_mask = 2
-position = Vector2( 0, -2 )
-frames = SubResource( 1 )
-animation = "idle"
+position = Vector2(0, -2)
+sprite_frames = SubResource("1")
+animation = &"idle"
+autoplay = "idle"
 frame = 3
-playing = true
 
-[node name="Light2D" type="Light2D" parent="Slime/Sprite"]
-texture = ExtResource( 12 )
-color = Color( 1, 0, 0, 1 )
-energy = 1.4
+[node name="NoShadow" type="PointLight2D" parent="Slime/Sprite2D"]
+texture_filter = 2
+position = Vector2(0, 7)
+color = Color(0.898039, 0, 0.2, 1)
+energy = 0.75
+texture = ExtResource("12_ro8w2")
+texture_scale = 0.6
+
+[node name="Shadow" type="PointLight2D" parent="Slime/Sprite2D"]
+light_mask = 3
+visibility_layer = 3
+texture_filter = 2
+position = Vector2(0, 7)
+color = Color(0.898039, 0, 0.2, 1)
 shadow_enabled = true
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_filter = 5
-shadow_filter_smooth = 1.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_item_cull_mask = 3
+texture = ExtResource("12_ro8w2")
 
 [node name="Collision" type="CollisionShape2D" parent="Slime"]
-position = Vector2( 0, 0.5 )
-shape = SubResource( 2 )
+position = Vector2(0, 1.5)
+shape = SubResource("2")
 disabled = true
 
 [node name="dead" type="Area2D" parent="Slime"]
@@ -125,26 +170,27 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="Slime/dead"]
-self_modulate = Color( 0.219608, 0, 1, 1 )
-position = Vector2( 0, 0.75 )
-shape = SubResource( 4 )
+self_modulate = Color(0.219608, 0, 1, 1)
+position = Vector2(0, 2.0625)
+shape = SubResource("4")
 
 [node name="head" type="Area2D" parent="Slime"]
 collision_layer = 4
 collision_mask = 4
 
 [node name="Collision" type="CollisionShape2D" parent="Slime/head"]
-self_modulate = Color( 0.756863, 1, 0, 1 )
-position = Vector2( 0, -5.5 )
-shape = SubResource( 6 )
+self_modulate = Color(0.756863, 1, 0, 1)
+position = Vector2(0, -3.5)
+shape = SubResource("6")
 
 [node name="MoveAnimation" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Slime")
 autoplay = "normal"
 playback_process_mode = 0
 method_call_mode = 1
-anims/RESET = SubResource( 7 )
-anims/normal = SubResource( 3 )
+libraries = {
+"": SubResource("AnimationLibrary_pletp")
+}
 
 [connection signal="body_entered" from="Slime/dead" to="." method="dead_entered"]
 [connection signal="body_entered" from="Slime/head" to="." method="head_entered"]

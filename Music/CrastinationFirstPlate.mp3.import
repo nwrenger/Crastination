@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/CrastinationFirstPlate.mp3-e18620a529b3eaa34ed127a5c8f66816.mp3str"
+uid="uid://c110mhvtivtvi"
+path="res://.godot/imported/CrastinationFirstPlate.mp3-e18620a529b3eaa34ed127a5c8f66816.mp3str"
 
 [deps]
 
 source_file="res://Music/CrastinationFirstPlate.mp3"
-dest_files=[ "res://.import/CrastinationFirstPlate.mp3-e18620a529b3eaa34ed127a5c8f66816.mp3str" ]
+dest_files=["res://.godot/imported/CrastinationFirstPlate.mp3-e18620a529b3eaa34ed127a5c8f66816.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

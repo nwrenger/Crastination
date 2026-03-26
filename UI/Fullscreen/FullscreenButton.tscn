@@ -1,50 +1,46 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://dstdl7y5x6vik"]
 
-[ext_resource path="res://UI/Fullscreen/FullscreenButton.gd" type="Script" id=1]
-[ext_resource path="res://UI/Fullscreen/FullscreenOn.png" type="Texture" id=2]
-[ext_resource path="res://UI/Fullscreen/FullscreenOff.png" type="Texture" id=3]
+[ext_resource type="Script" path="res://UI/Fullscreen/FullscreenButton.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bhdyc25vshfqo" path="res://UI/Fullscreen/FullscreenOn.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ves534j47nbq" path="res://UI/Fullscreen/FullscreenOff.png" id="3"]
 
-[sub_resource type="StyleBoxTexture" id=12]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 16, 16 )
-margin_left = 1.0
-margin_right = 1.0
-margin_top = 1.0
-margin_bottom = 1.0
-modulate_color = Color( 0.607843, 0.607843, 0.607843, 1 )
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hj6yq"]
+texture = ExtResource("2")
 
-[sub_resource type="StyleBoxTexture" id=13]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 16, 16 )
-margin_left = 1.0
-margin_right = 1.0
-margin_top = 1.0
-margin_bottom = 1.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ceq0d"]
+texture = ExtResource("2")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+modulate_color = Color(0.607843, 0.607843, 0.607843, 1)
 
-[sub_resource type="StyleBoxEmpty" id=14]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nl3hs"]
+texture = ExtResource("3")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
 
-[sub_resource type="StyleBoxTexture" id=15]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 16, 16 )
-modulate_color = Color( 0.239216, 0.239216, 0.239216, 1 )
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iuojv"]
+texture = ExtResource("2")
+modulate_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id=16]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 16, 16 )
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujjp0"]
 
 [node name="FullscreenButton" type="Button"]
-margin_left = 5.0
-margin_top = 3.0
-margin_right = 44.0
-margin_bottom = 44.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/focus = SubResource( 14 )
-custom_styles/disabled = SubResource( 15 )
-custom_styles/normal = SubResource( 16 )
+theme_override_styles/normal = SubResource("StyleBoxTexture_hj6yq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ceq0d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nl3hs")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_iuojv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujjp0")
 toggle_mode = true
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [connection signal="toggled" from="." to="." method="togglescreen"]
